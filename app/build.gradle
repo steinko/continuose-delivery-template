@@ -14,12 +14,13 @@ plugins {
 }
 
 repositories {
+    mavenCentral()
     maven {
-        url "https://gitlab.example.com/api/v4/groups/<group>/-/packages/maven"
+        url "https://gitlab.com/api/v4/groups/8539629-/packages/maven"
         name "GitLab"
         credentials(HttpHeaderCredentials) {
             name = 'Private-Token'
-            value = gradle-ci-cd
+            value = 'gradle-ci-cd'
         }
         authentication {
             header(HttpHeaderAuthentication)
@@ -35,7 +36,7 @@ publishing {
     }
     repositories {
         maven {
-            url "https://gitlab.example.com/api/v4/projects/25661874/packages/maven"
+            url "https://gitlab.com/api/v4/projects/25661874/packages/maven"
             credentials(HttpHeaderCredentials) {
                 name = "Private-Token"
                 value = gitLabPrivateToken // the variable resides in ~/.gradle/gradle.properties
@@ -53,9 +54,7 @@ dependencies {
 
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:29.0-jre'
+    
 }
 
 application {
