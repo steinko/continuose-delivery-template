@@ -14,12 +14,7 @@ plugins {
 }
 
 repositories {
-        maven {
-           publications {
-              library(MavenPublication) {
-                  from components.java
-               }
-             }
+    maven {
         url "https://gitlab.example.com/api/v4/groups/<group>/-/packages/maven"
         name "GitLab"
         credentials(HttpHeaderCredentials) {
@@ -29,10 +24,26 @@ repositories {
         authentication {
             header(HttpHeaderAuthentication)
         }
-       
-        url "https://gitlab.example.com/api/v4/projects/25661874/packages/maven"
-        name "GitLab"
-    
+    }
+}
+
+publishing {
+    publications {
+        library(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "https://gitlab.example.com/api/v4/projects/25661874/packages/maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Private-Token"
+                value = gitLabPrivateToken // the variable resides in ~/.gradle/gradle.properties
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
     }
 }
 
