@@ -9,11 +9,31 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'java'
+    id 'maven-publish'
 }
 
 repositories {
-    // Use JCenter for resolving dependencies.
-    jcenter()
+        maven {
+           publications {
+              library(MavenPublication) {
+                  from components.java
+               }
+             }
+        url "https://gitlab.example.com/api/v4/groups/<group>/-/packages/maven"
+        name "GitLab"
+        credentials(HttpHeaderCredentials) {
+            name = 'Private-Token'
+            value = gradle-ci-cd
+        }
+        authentication {
+            header(HttpHeaderAuthentication)
+        }
+       
+        url "https://gitlab.example.com/api/v4/projects/25661874/packages/maven"
+        name "GitLab"
+    
+    }
 }
 
 dependencies {
