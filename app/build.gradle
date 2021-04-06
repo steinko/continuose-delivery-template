@@ -16,6 +16,11 @@ repositories {
     mavenCentral()
 }
 
+compileJava {
+   sourceCompatibility = 15
+   targetCompatibility = 15
+}
+
 
 dependencies {
     // Use JUnit Jupiter API for testing.
