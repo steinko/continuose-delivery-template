@@ -11,6 +11,10 @@ build:
   stage: build
   script:
     - ./gradlew assemble
+  artifacts:
+    paths:
+      - ./app/build/libs/app.jar 
+
 
 test:
   stage: test
