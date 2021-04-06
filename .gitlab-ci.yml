@@ -1,6 +1,0 @@
-eploy:
-  image: gradle:latest
-  script:
-    - 'gradle publish'
-  only:
-    - master
