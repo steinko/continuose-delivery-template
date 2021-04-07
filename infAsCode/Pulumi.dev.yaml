@@ -1,0 +1,5 @@
+config:
+  gcp:project: springboot22
+  gcp:region: europe-west1
+  gcp:zone: europe-west1-a
+  pulumi:template: kubernetes-typescript
