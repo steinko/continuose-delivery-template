@@ -50,10 +50,8 @@ pulumi:
      # This is just a sample of how artifacts can be expired (removed) automatically in GitLab.
      # You may choose to not set this at all based on your organization's or team's preference.
      expire_in: 1 week
-   # This job should only be created if the pipeline is created for the master branch.
-   only:
-   - master
-
+ 
+  
 pulumi-preview:
   stage: infrastructure-update
   before_script:
