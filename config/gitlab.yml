@@ -1,0 +1,3 @@
+- { name: 'github', app_id: 'github',
+    app_secret: '961d8a1defaa66d0c08ee762e7b8ebe8648b30bb',
+    args: { scope: 'user:email' } }
