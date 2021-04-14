@@ -35,8 +35,10 @@ package:
 pulumi:
    stage: infrastructure-update
    before_script:
+    - apk update
+    - apk add bash
     - chmod +x ./infAsCode/scripts/*.sh
-    - apt-get install -y curl
+    - apk add curl
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
