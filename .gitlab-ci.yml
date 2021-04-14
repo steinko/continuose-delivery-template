@@ -36,7 +36,7 @@ pulumi:
    stage: infrastructure-update
    before_script:
     - chmod +x ./infAsCode/scripts/*.sh
-    - apt install curl
+    - apt-get install -y curl
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
