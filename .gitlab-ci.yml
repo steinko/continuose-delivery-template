@@ -35,13 +35,13 @@ package:
 pulumi:
    stage: infrastructure-update
    before_script:
-    - chmod +x ./infAsCode/script/*.sh
+    - chmod +x ./infAsCode/scripts/*.sh
     - apk update
     - apk add bash
     - apk add curl
-    - ./infAsCode/script/setup.sh
+    - ./infAsCode/scripts/setup.sh
    script:
-    - ./infAsCode/script/run-pulumi.sh
+    - ./infAsCode/scripts/run-pulumi.sh
   # Create an artifact archive with just the pulumi log file,
   # which is created using console-redirection in run-pulumi.sh.
    artifacts:
@@ -56,7 +56,7 @@ pulumi-preview:
   stage: infrastructure-update
   before_script:
     - chmod +x ./infAsCode/scripts/*.sh
-    - ./infAsCode/script/setup.sh
+    - ./infAsCode/scripts/setup.sh
   script:
     - ./infAsCode/scripts/pulumi-preview.sh
   only:
