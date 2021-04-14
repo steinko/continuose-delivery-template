@@ -1,5 +1,7 @@
-image: openjdk:15
+image: docker:stable
 
+services:
+  - name: docker:dind
 stages:
   - build
   - test
@@ -9,6 +11,7 @@ stages:
 
 
 build:
+  image: openjdk:15
   stage: build
   script:
     - ./gradlew assemble
@@ -18,6 +21,7 @@ build:
 
 
 test:
+  image: openjdk:15
   stage: test
   script:
     - ./gradlew check
