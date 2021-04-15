@@ -1,5 +1,6 @@
 config:
   Gradle-Ci-CD:cloudLocation: europe-west4-a
+  Gradle-Ci-CD:cloudProject: springboot22
   Gradle-Ci-CD:cloudRegion: europe-west4
   gcp:project: springboot22
   gcp:region: europe-west1
