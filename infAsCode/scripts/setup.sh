@@ -11,11 +11,6 @@ curl -qL https://www.npmjs.com/install.sh | sh
 # yarn
 npm install npm@latest -g
 
-apt-add-repository ppa:git-core/ppa
-apt-get update
-apt-get install git
-
-curl "https://pyenv.run" | bash
 mkdir gcloud-build && cd gcloud-build;
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-189.0.0-linux-x86_64.tar.gz;
 tar -xzf google-cloud-sdk-189.0.0-linux-x86_64.tar.gz

@@ -37,6 +37,7 @@ package:
      - docker push steinko/gradle-ci-cd
 
 pulumi:
+   image: python:latest
    stage: infrastructure-update
    before_script:
     - apk update
