@@ -9,7 +9,7 @@ export PATH=$PATH:$HOME/.pulumi/bin
 
 pulumi login
 # nodejs
-apt install  nodejs
+apt install  nodejs -y
 curl -qL https://www.npmjs.com/install.sh | sh
 # yarn
 npm install npm@latest -g
