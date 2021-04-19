@@ -1,7 +1,9 @@
-image: docker:stable
+image: ubuntu:lates
+services: 
+  - openjdk:15
+  - docker
+  - python
 
-services:
-  - name: docker:dind
 stages:
   - build
   - test
@@ -11,7 +13,6 @@ stages:
 
 
 build:
-  image: openjdk:15
   stage: build
   script:
     - ./gradlew assemble
@@ -21,15 +22,11 @@ build:
 
 
 test:
-  image: openjdk:15
   stage: test
   script:
     - ./gradlew check
 
 package:
-   image: docker:latest
-   services:
-     - docker:dind
    stage: package
    script:
      - docker build -t steinko/gradle-ci-cd .
@@ -37,7 +34,7 @@ package:
      - docker push steinko/gradle-ci-cd
 
 pulumi:
-   image: python:latest
+ 
    stage: infrastructure-update
    before_script:
     - apk update
