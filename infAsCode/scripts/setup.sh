@@ -2,7 +2,7 @@
 set -e -x
 apt update -y
 apt upgrade -y
-apt install curl
+apt install curl -y
 curl -fsSL https://get.pulumi.com/ | bash
 export PATH=$PATH:$HOME/.pulumi/bin
 # Login into pulumi. This will require the PULUMI_ACCESS_TOKEN environment variable
