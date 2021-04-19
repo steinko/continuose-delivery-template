@@ -1,11 +1,7 @@
 default:
-  image: ubuntu
+  image: openjdk:15
 
-  services: 
-    - openjdk:15
-    - docker
-    - python:3
-
+  
 stages:
   - build
   - test
@@ -29,6 +25,7 @@ test:
     - ./gradlew check
 
 package:
+   image: docker:latest
    stage: package
    script:
      - docker build -t steinko/gradle-ci-cd .
@@ -36,13 +33,12 @@ package:
      - docker push steinko/gradle-ci-cd
 
 pulumi:
- 
+   image: ubuntu
    stage: infrastructure-update
    before_script:
-    - apk update
-    - apk add bash
+    - apt install bash
     - chmod +x ./infAsCode/scripts/*.sh
-    - apk add curl
+    - apt install curl
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
