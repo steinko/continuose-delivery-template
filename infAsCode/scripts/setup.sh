@@ -14,11 +14,11 @@ curl -qL https://www.npmjs.com/install.sh | sh
 # yarn
 npm install npm@latest -g
 
-mkdir gcloud-build && cd gcloud-build;
-curl -fsSL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-189.0.0-linux-x86_64.tar.gz| bash
-tar -xzf google-cloud-sdk-189.0.0-linux-x86_64.tar.gz
-./google-cloud-sdk/install.sh
-source google-cloud-sdk/path.bash.inc && echo "source google-cloud-sdk/path.bash.inc" >> $HOME/.profile
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+gcloud init
 gcloud config set project springboot22
 gcloud auth activate-service-account --key-file= /springboot22-032a69ee7f66.json
 cd ..
