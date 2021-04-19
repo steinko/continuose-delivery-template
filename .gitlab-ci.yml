@@ -38,8 +38,9 @@ pulumi:
    image: ubuntu
    stage: infrastructure-update
    before_script:
-    - apt install bash
     - chmod +x ./infAsCode/scripts/*.sh
+    - apt update
+    - apt upgrade
     - apt install curl
     - ./infAsCode/scripts/setup.sh
    script:
