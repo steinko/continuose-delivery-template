@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e -x
-apt update
-apt upgrade
+apt update -y
+apt upgrade -y
 apt install curl
 curl -fsSL https://get.pulumi.com/ | bash
 export PATH=$PATH:$HOME/.pulumi/bin
