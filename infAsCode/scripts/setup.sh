@@ -19,7 +19,6 @@ apt install apt-transport-https ca-certificates gnupg -y
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 apt update -y
 apt install google-cloud-sdk -y
-gcloud init
 gcloud config set project springboot22
 gcloud auth activate-service-account --key-file= /springboot22-032a69ee7f66.json
 
