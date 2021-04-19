@@ -1,8 +1,10 @@
-image: ubuntu
-services: 
-  - openjdk:15
-  - docker
-  - python
+default:
+  image: ubuntu
+
+  services: 
+    - openjdk:15
+    - docker
+    - python:3
 
 stages:
   - build
