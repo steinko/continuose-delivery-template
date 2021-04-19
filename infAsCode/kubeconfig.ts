@@ -1,23 +1,17 @@
-import * as k8s from "@pulumi/kubernetes"
-import * as pulumi from "@pulumi/pulumi"
-import * as gcp from "@pulumi/gcp"
-import * as config from "./config"
+import * as k8s from "@pulumi/kubernetes";
+import * as pulumi from "@pulumi/pulumi";
+import * as gcp from "@pulumi/gcp";
 
+const name = "helloworld";
 
-const name = "todo-cluster";
 // Create a GKE cluster
-const engineVersion = gcp.container.getEngineVersions({location:config.cloudRegion, project: config.cloudProject}).then(v => v.latestMasterVersion);
+const engineVersion = gcp.container.getEngineVersions().then(v => v.latestMasterVersion);
 const cluster = new gcp.container.Cluster(name, {
-	project: config.cloudProject,
-	clusterAutoscaling: {enabled: true, resourceLimits:[ {resourceType: 'cpu', minimum:1 ,maximum:20 },
-	                                                     {resourceType: 'memory', minimum:1 ,maximum:64 }  
-                                                       ]
-                        },
-    initialNodeCount: 1,
+    initialNodeCount: 2,
     minMasterVersion: engineVersion,
     nodeVersion: engineVersion,
     nodeConfig: {
-        machineType: "e2-medium",
+        machineType: "n1-standard-1",
         oauthScopes: [
             "https://www.googleapis.com/auth/compute",
             "https://www.googleapis.com/auth/devstorage.read_only",
@@ -25,14 +19,10 @@ const cluster = new gcp.container.Cluster(name, {
             "https://www.googleapis.com/auth/monitoring"
         ],
     },
-   location: config.cloudLocation,
-  // networkingMode: 'VPC_NATIVE',
-  // ipAllocationPolicy: {
-//	     clusterIpv4CidrBlock: '10.0.0.0/14', 
-  //       servicesIpv4CidrBlock: '10.4.0.0/19'
-  //       },
 });
 
+// Export the Cluster name
+export const clusterName = cluster.name;
 
 // Manufacture a GKE-style kubeconfig. Note that this is slightly "different"
 // because of the way GKE requires gcloud to be in the picture for cluster
@@ -40,7 +30,7 @@ const cluster = new gcp.container.Cluster(name, {
 export const kubeconfig = pulumi.
     all([ cluster.name, cluster.endpoint, cluster.masterAuth ]).
     apply(([ name, endpoint, masterAuth ]) => {
-        const context = `${config.cloudProject}_${config.cloudLocation}_${name}`;
+        const context = `${gcp.config.project}_${gcp.config.zone}_${name}`;
         return `apiVersion: v1
 clusters:
 - cluster:
@@ -69,6 +59,6 @@ users:
     });
 
 // Create a Kubernetes provider instance that uses our cluster from above.
-export const clusterProvider = new k8s.Provider(name, {
+const clusterProvider = new k8s.Provider(name, {
     kubeconfig: kubeconfig,
 });
