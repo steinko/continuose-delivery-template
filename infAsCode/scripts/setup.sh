@@ -17,4 +17,5 @@ tar -xzf google-cloud-sdk-189.0.0-linux-x86_64.tar.gz
 ./google-cloud-sdk/install.sh
 source google-cloud-sdk/path.bash.inc && echo "source google-cloud-sdk/path.bash.inc" >> $HOME/.profile
 gcloud config set project springboot22
-gcloud auth application-default login
+gcloud auth activate-service-account --key-file= /springboot22-032a69ee7f66.json
+cd ..
