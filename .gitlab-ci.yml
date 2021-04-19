@@ -26,6 +26,8 @@ test:
 
 package:
    image: docker:latest
+   services:
+     - docker:dind
    stage: package
    script:
      - docker build -t steinko/gradle-ci-cd .
