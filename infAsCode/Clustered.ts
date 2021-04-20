@@ -5,12 +5,10 @@ import {serviceAccount} from "./ServiceAccount"
 
 const name = "gradle-ci-cd-cluster";
 
-// Create a GKE cluster
-const engineVersion = gcp.container.getEngineVersions().then(v => v.latestMasterVersion);
+
 const cluster = new gcp.container.Cluster(name, {
+	location: "europe-north1-a",
     initialNodeCount: 2,
-    minMasterVersion: engineVersion,
-    nodeVersion: engineVersion,
     nodeConfig: {
 	    serviceAccount: serviceAccount.id,
         machineType: "n1-standard-1",
