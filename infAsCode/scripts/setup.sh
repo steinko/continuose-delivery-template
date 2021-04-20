@@ -1,4 +1,5 @@
 #!/bin/bash
+cd infAsCode
 set -e -x
 apt update -y
 apt upgrade -y
