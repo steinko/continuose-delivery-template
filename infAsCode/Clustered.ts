@@ -2,7 +2,7 @@ import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
 import * as gcp from "@pulumi/gcp";
 
-const name = "helloworld";
+const name = "gradle-ci-cd-cluster";
 
 // Create a GKE cluster
 const engineVersion = gcp.container.getEngineVersions().then(v => v.latestMasterVersion);
@@ -59,6 +59,6 @@ users:
     });
 
 // Create a Kubernetes provider instance that uses our cluster from above.
-const clusterProvider = new k8s.Provider(name, {
+export const clusterProvider = new k8s.Provider(name, {
     kubeconfig: kubeconfig,
 });

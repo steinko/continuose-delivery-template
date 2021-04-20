@@ -1,5 +1,5 @@
 import * as k8s from "@pulumi/kubernetes";
-import {clusterProvider } from './kubeconfig'
+import {clusterProvider} from "./Clustered"
 
 const appLabels = { app: "nginx" };
 const deployment = new k8s.apps.v1.Deployment("nginx", {

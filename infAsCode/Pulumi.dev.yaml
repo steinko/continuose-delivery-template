@@ -1,10 +1,9 @@
 config:
   Gradle-Ci-CD:cloudLocation: europe-west4-a
-  Gradle-Ci-CD:cloudProject: springboot22
   Gradle-Ci-CD:cloudRegion: europe-west4
   gcp:project: springboot22
-  gcp:region: europe-west1
-  gcp:zone: europe-west1-a
+  gcp:region: europe-north1
+  gcp:zone: europe-north1-a
   gitlab:token:
     secure: AAABANepa3XyaOq794ftE3R50yMaswmjNOFD3g4v/kwKv+mNisBb66J8vWpduneZ5vO8gw==
   pulumi:template: kubernetes-typescript
