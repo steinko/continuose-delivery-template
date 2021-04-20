@@ -7,6 +7,6 @@ set -e -x
 export PATH=$PATH:$HOME/.pulumi/bin
 
 cd infAsCode
-npm install
+pulumi login
 pulumi stack select dev
 pulumi up --yes
