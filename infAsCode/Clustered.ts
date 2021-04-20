@@ -1,6 +1,7 @@
 import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
 import * as gcp from "@pulumi/gcp";
+import {serviceAccount} from "./ServiceAccount"
 
 const name = "gradle-ci-cd-cluster";
 
@@ -11,6 +12,7 @@ const cluster = new gcp.container.Cluster(name, {
     minMasterVersion: engineVersion,
     nodeVersion: engineVersion,
     nodeConfig: {
+	    serviceAccount: serviceAccount.id,
         machineType: "n1-standard-1",
         oauthScopes: [
             "https://www.googleapis.com/auth/compute",
