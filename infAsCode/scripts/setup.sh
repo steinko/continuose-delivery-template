@@ -27,5 +27,3 @@ gcloud config set project springboot22
 gcloud config set compute/zone europe-north1-a
 
 apt install kubectl
-gcloud services enable cloudresourcemanager.googleapis.com
-kubectl create secret generic servic-account-key --from-file=key.json=scripts/springboot22-0b39b2fdd02b.json
