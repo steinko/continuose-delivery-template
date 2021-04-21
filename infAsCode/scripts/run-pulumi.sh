@@ -16,3 +16,4 @@ pulumi stack select dev
 pulumi config set gcp:project springboot22
 pulumi config set gcp:zone europe-north1-a
 pulumi up --yes
+pulumi destroy --yes

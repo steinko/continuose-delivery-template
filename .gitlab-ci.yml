@@ -42,14 +42,6 @@ pulumi:
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
-  # Create an artifact archive with just the pulumi log file,
-  # which is created using console-redirection in run-pulumi.sh.
-   artifacts:
-     paths:
-     - pulumi-log.txt
-     # This is just a sample of how artifacts can be expired (removed) automatically in GitLab.
-     # You may choose to not set this at all based on your organization's or team's preference.
-     expire_in: 1 week
  
   
 pulumi-preview:
