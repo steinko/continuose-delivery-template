@@ -10,8 +10,7 @@ const deployment = new k8s.apps.v1.Deployment("nginx", {
         template: {
             metadata: { labels: appLabels },
             spec: { 
-	           volumes: [{name:"google-cloud-key" },
-                         {secret: {secretName:"service-account-key" }} ],
+	           
 	           containers: [{ name: "nginx", image: "nginx" }],}
         }
     }
