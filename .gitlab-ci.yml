@@ -45,6 +45,7 @@ pulumi:
  
   
 pulumi-preview:
+  image: ubuntu
   stage: infrastructure-update
   before_script:
     - chmod +x ./infAsCode/scripts/*.sh
