@@ -9,9 +9,8 @@ export PATH=$PATH:$HOME/.pulumi/bin
 
 npm install
 pulumi login
+pulumi stack select dev
 pulumi config set gcp:project springboot22
 pulumi config set gcp:credentials $(cat scripts/springboot22-0b39b2fdd02b.json)
 pulumi config set gcp:zone europe-north1-a
-
-pulumi stack select dev
 pulumi up --yes
