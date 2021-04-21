@@ -22,5 +22,9 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |apt-key --keyring /u
 apt update -y
 apt install google-cloud-sdk -y
 gcloud config set account  serviceaccount@springboot22.iam.gserviceaccount.com
-gcloud auth activate-service-account --key-file=scripts/springboot22-032a69ee7f66.json
-gcloud components install kubectl
+gcloud config set project springboot22
+gcloud config set compute/zone europe-north1-a
+gcloud auth activate-service-account --key-file=scripts/springboot22-0b39b2fdd02b.json
+apt install kubectl
+gcloud services enable cloudresourcemanager.googleapis.com
+kubectl create secret generic servic-account-key --from-file=key.json=springboot22-032a69ee7f66.json
