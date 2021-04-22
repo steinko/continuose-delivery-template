@@ -42,6 +42,8 @@ pulumi:
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
+   only:
+     - master
  
   
 pulumi-preview:
