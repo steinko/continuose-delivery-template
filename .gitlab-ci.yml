@@ -7,6 +7,7 @@ stages:
   - test
   - package
   - infrastructure-update
+  - systemtest
   - deploy
 
 
@@ -56,3 +57,9 @@ pulumi-preview:
     - ./infAsCode/scripts/pulumi-preview.sh
   only:
   - merge_requests
+
+systemtest:
+  image: ubuntu
+  stage: systemtest
+  script:
+    - ./acceptanceTest/gradlew cucumber

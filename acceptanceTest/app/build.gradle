@@ -9,14 +9,11 @@ repositories {
    }
 
 dependencies {
-    
-    compile group: 'io.cucumber', name: 'cucumber-spring', version: '6.2.2'
-   
-
-    testImplementation 'io.cucumber:cucumber-java:6.2.2'
-    testImplementation 'io.cucumber:cucumber-junit:6.2.2'
+     testImplementation 'io.cucumber:cucumber-java:6.8.1'
+    testImplementation 'io.cucumber:cucumber-junit:6.8.1'
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.3.1'
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.3.1.RELEASE'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
 }
 
 
@@ -41,7 +38,7 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin','pretty', '--glue', 'org.steinko.todo', 'src/test/resources']
+            args = ['--plugin','pretty', '--glue', 'org.steinko.helloworld', 'src/test/resources']
         }
     }
 }

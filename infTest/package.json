@@ -1,0 +1,11 @@
+{
+   "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.14.3"
+  }
+}
