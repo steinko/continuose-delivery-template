@@ -1,8 +1,10 @@
 package org.steinko.helloworld.config;
 
 import org.springframework.security.core.userdetails.User;
+import static org.springframework.security.core.userdetails.User.UserBuilder;
 import static org.springframework.security.core.userdetails.User.withUsername;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,19 +16,21 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 public class ProjectConfig extends WebSecurityConfigurerAdapter{
 
 	public UserDetailsService userDetailService() {
-		UserDetailsService userDetailsService = new InMemoryUserDetailsManager();
-		 User user = User.withUsername("steinko")
+		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+		UserDetails user = User.withUsername("steinko")
+				       .passwordEncoder(encoder::encode)
 				       .password("1234")
 				       .authorities("read")
 				       .build();
+		InMemoryUserDetailsManager uds = new InMemoryUserDetailsManager(user);
+		  
 		
-		userDetailsService.createUser(user);
-		
-		return userDetailsService;
+		return uds;
 	}
 
-	public PasswordEncoder passwordEncoder() {
-		
+	public PasswordEncoder passwordEncoder() {		
 		return new BCryptPasswordEncoder() ;
 	}
 	
@@ -37,6 +41,4 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter{
 		.anyRequest()
 		.permitAll();
 	}
-	
-
 }
