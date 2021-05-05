@@ -14,8 +14,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 public class ProjectConfig extends WebSecurityConfigurerAdapter{
 
 	public UserDetailsService userDetailService() {
-		var userDetailsService = new InMemoryUserDetailsManager();
-		var user = User.withUsername("steinko")
+		UserDetailsService userDetailsService = new InMemoryUserDetailsManager();
+		 User user = User.withUsername("steinko")
 				       .password("1234")
 				       .authorities("read")
 				       .build();
