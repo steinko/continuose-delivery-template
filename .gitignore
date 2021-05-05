@@ -3,3 +3,11 @@
 
 # Ignore Gradle build output directory
 build
+app/build
+infAsCode/node_modules
+gradle
+appEngine/node_modules
+gcp_ts_cloudrun/node_modules
+infTest/node_modules
+acceptanceTest/app/build
+acceptanceTest/gradle

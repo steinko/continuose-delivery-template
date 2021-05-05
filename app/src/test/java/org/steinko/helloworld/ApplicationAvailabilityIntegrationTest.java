@@ -2,11 +2,8 @@ package org.steinko.helloworld;
 
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.availability.ApplicationAvailability;
-import org.springframework.boot.availability.LivenessState;
-import org.springframework.boot.availability.ReadinessState;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.web.context.WebApplicationContext;
@@ -23,28 +20,15 @@ public class ApplicationAvailabilityIntegrationTest {
 	@Autowired
 	private WebApplicationContext context;
 	
-	 @Autowired 
-	 private ApplicationAvailability applicationAvailability;
-
-	
-	@Test
-	public void shoulBeLiving() {
-		assertEquals(applicationAvailability.getLivenessState(),LivenessState.CORRECT );
-		
-	}
-	
-	@Test
-	public void shoulBeRedy() {
-	  assertEquals(applicationAvailability.getReadinessState(),ReadinessState.ACCEPTING_TRAFFIC);
-	}
-	
+	 
+	@Disabled
 	@Test 
 	public void shouldReurnOk() {
 		
 		given()
  	      . webAppContextSetup(context)
      .when()
-        .put("http://localhost:" + localServerPort + "/actuator/health/liveness")
+        .put("http://localhost:" + localServerPort + "/actuator/health")
      .then()
        .statusCode(OK.value()); 
  	   
