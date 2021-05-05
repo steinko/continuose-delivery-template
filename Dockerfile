@@ -1,5 +1,10 @@
-FROM  adoptopenjdk/openjdk15
-COPY ./app/build/libs/app.jar app.jar
-RUN chmod +x /app.jar
-ENTRYPOINT ["java"]
-CMD ["-jar", "/app.jar"
+FROM gradle as gradleimage
+COPY ./app /home/gradle/source/app
+COPY settings.gradle /home/gradle/source/settings.gradle
+WORKDIR /home/gradle/source
+RUN gradle build
+
+FROM openjdk
+COPY --from=gradleimage /home/gradle/source/app/build/libs/app.jar /app/
+WORKDIR /app
+ENTRYPOINT ["java", "-jar", "app.jar"]

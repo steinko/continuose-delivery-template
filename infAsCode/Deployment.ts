@@ -1,5 +1,5 @@
 import * as k8s from "@pulumi/kubernetes";
-import {clusterProvider} from "./index"
+import {clusterProvider} from "./Cluster"
 
 
 export const deployment = new k8s.apps.v1.Deployment("hello-world-deployment", {

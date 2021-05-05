@@ -47,14 +47,14 @@ export const deployment = new k8s.apps.v1.Deployment("hello-world-deployment", {
 	                     
 	           containers: [{ name: "hello-world-image",
                               image: "docker.io/steinko/gradle-ci-cd",
-                              livenessProbe:{ httpGet:{path:'/helloworld',
+                              livenessProbe:{ httpGet:{path:'/actuator/health/liveness',
                                                        port: 8080},
                                               initialDelaySeconds:5,
-                              timeoutSeconds: 1,
-                              periodSeconds: 10,
-                              failureThreshold: 3 
-                                   
-                            } }],
+                                              timeoutSeconds: 1,
+                                              periodSeconds: 10,
+                                              failureThreshold: 3 
+                                            } 
+                            }],
             }
         }
     }

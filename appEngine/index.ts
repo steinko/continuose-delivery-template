@@ -12,6 +12,13 @@ const gaeApi = new gcp.projects.IAMMember("gaeApi", {
     member: pulumi.interpolate`serviceAccount:springboot22@appspot.gserviceaccount.com`,
 });
 
+const bucket = new gcp.storage.Bucket("bucket", {project: service.project});
+export const bucketName = bucket.url;
+const object = new gcp.storage.BucketObject("object", {
+    bucket: bucket.name,
+    source: new pulumi.asset.FileAsset("./test-fixtures/appengine/hello-world.zip"),
+});
+
 
 const myappV1 = new gcp.appengine.FlexibleAppVersion("hello-world-app",
   { versionId: "v1",

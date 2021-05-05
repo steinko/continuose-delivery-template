@@ -16,7 +16,7 @@ const cluster = new gcp.container.Cluster(name, {
     minMasterVersion: engineVersion,
     nodeVersion: engineVersion,
     nodeConfig: {
-        machineType: "e2-medium",
+        machineType: "e2-standard-2",
         oauthScopes: [
             "https://www.googleapis.com/auth/compute",
             "https://www.googleapis.com/auth/devstorage.read_only",
@@ -25,11 +25,7 @@ const cluster = new gcp.container.Cluster(name, {
         ],
     },
    location: config.cloudLocation,
-  // networkingMode: 'VPC_NATIVE',
-  // ipAllocationPolicy: {
-//	     clusterIpv4CidrBlock: '10.0.0.0/14', 
-  //       servicesIpv4CidrBlock: '10.4.0.0/19'
-  //       },
+ 
 });
 
 
