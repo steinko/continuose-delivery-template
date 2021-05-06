@@ -1,5 +1,5 @@
 default:
-  image: c:15
+  image: openjdk:15
 
   
 stages:
