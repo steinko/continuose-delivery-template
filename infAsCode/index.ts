@@ -53,6 +53,13 @@ export const deployment = new k8s.apps.v1.Deployment("hello-world-deployment", {
                                               timeoutSeconds: 1,
                                               periodSeconds: 10,
                                               failureThreshold: 3 
+                                            } ,
+                                readinessProbe:{ httpGet:{path:'/actuator/health/readiness',
+                                                       port: 8080},
+                                              initialDelaySeconds:5,
+                                              timeoutSeconds: 1,
+                                              periodSeconds: 10,
+                                              failureThreshold: 3 
                                             } 
                             }],
             }

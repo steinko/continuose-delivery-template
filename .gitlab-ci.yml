@@ -3,16 +3,22 @@ default:
 
   
 stages:
-  - build
-  - test
-  - package
-  - infrastructure-update
-  - systemtest
-  - deploy
+  - integration-test
+  - assemble-artefact
+  - build-image
+  - preview-infrastructure
+  - provide-infrastructure
+  - acceptance-test
+
+integration-test:
+  stage: test-integration
+  script:
+    - ./gradlew check
 
 
-build:
-  stage: build
+
+assembel-artefact:
+  stage: assemble-artefact
   script:
     - ./gradlew assemble
   artifacts:
@@ -20,14 +26,9 @@ build:
       - ./app/build/libs/app.jar 
 
 
-test:
-  stage: test
-  script:
-    - ./gradlew check
-
-package:
+build-image:
    image: ubuntu
-   stage: package
+   stage: build-image
    script:
      - apt update -y
      - apt upgrade -y
@@ -54,36 +55,22 @@ package:
      - docker login -u steinko -p RoxyMusic11
      - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
 
-pulumi:
+provide-infrastuture:
    image: ubuntu
-   stage: infrastructure-update
+   stage: provide-infrastructure
    before_script:
     - chmod +x ./infAsCode/scripts/*.sh
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
-   only:
-     - master
- 
-  
-pulumi-preview:
-  image: ubuntu
-  stage: infrastructure-update
-  before_script:
-    - chmod +x ./infAsCode/scripts/*.sh
-    - ./infAsCode/scripts/setup.sh
-  script:
-    - ./infAsCode/scripts/pulumi-preview.sh
-  only:
-  - merge_requests
+   
 
-systemtest:
+acceptance-test:
   image: gradle
-  stage: systemtest
+  stage: acceptance-test
   
   script:
     - cd ./acceptanceTest
     - gradle cucumber
-  only:
-     - master
+  
  
