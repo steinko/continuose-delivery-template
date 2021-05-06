@@ -81,5 +81,6 @@ systemtest:
   image: ubuntu
   stage: systemtest
   script:
+    - echo 'System.out.println(java.lang.System.getProperty("java.home"));' | jshell  -
     - export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
     - ./acceptanceTest/gradlew cucumber
