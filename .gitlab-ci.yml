@@ -78,9 +78,9 @@ pulumi-preview:
   - merge_requests
 
 systemtest:
-  image: ubuntu
+  image: gradle
   stage: systemtest
+  
   script:
-    - java -version
-    - export = JAVA_HOME="/usr/lib/jvm/java-15-openjdk-amd64"
-    - ./acceptanceTest/gradlew cucumber
+    - cd ./acceptanceTest
+    - gradle cucumber
