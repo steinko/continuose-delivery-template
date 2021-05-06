@@ -81,7 +81,6 @@ systemtest:
   image: ubuntu
   stage: systemtest
   script:
-    - apt install openjdk-11-jdk 
     - java -version
-    - export = JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+    - export = JAVA_HOME="/usr/lib/jvm/java-15-openjdk-amd64"
     - ./acceptanceTest/gradlew cucumber
