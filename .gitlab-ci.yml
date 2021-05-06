@@ -84,3 +84,6 @@ systemtest:
   script:
     - cd ./acceptanceTest
     - gradle cucumber
+  only:
+     - master
+ 
