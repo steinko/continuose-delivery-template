@@ -9,9 +9,9 @@ repositories {
    }
 
 dependencies {
-     testImplementation 'io.cucumber:cucumber-java:6.8.1'
+    testImplementation 'io.cucumber:cucumber-java:6.8.1'
     testImplementation 'io.cucumber:cucumber-junit:6.8.1'
-    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.3.1'
+    testImplementaion  'io.rest-assured:rest-assured:4.3.1'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
 }
