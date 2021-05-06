@@ -6,18 +6,17 @@ stages:
   - integration-test
   - assemble-artefact
   - build-image
-  - preview-infrastructure
   - provide-infrastructure
   - acceptance-test
 
 integration-test:
-  stage: test-integration
+  stage: integration-test
   script:
     - ./gradlew check
 
 
 
-assembel-artefact:
+assemble-artefact:
   stage: assemble-artefact
   script:
     - ./gradlew assemble
@@ -55,7 +54,7 @@ build-image:
      - docker login -u steinko -p RoxyMusic11
      - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
 
-provide-infrastuture:
+provide-infrastructure:
    image: ubuntu
    stage: provide-infrastructure
    before_script:
