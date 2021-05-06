@@ -79,10 +79,9 @@ pulumi-preview:
 
 systemtest:
   image: ubuntu
-  services:
-    - openjdk:16
   stage: systemtest
   script:
+    - apt install openjdk-16-jre
     - export JAVA_HOME=/usr/lib/jvm/openjdk-16-jdk
     - export PATH=$PATH:$JAVA_HOME/bin
     - ./acceptanceTest/gradlew cucumber
