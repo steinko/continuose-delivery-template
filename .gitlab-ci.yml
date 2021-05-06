@@ -1,5 +1,5 @@
 default:
-  image: openjdk:15
+  image: c:15
 
   
 stages:
@@ -81,7 +81,5 @@ systemtest:
   image: ubuntu
   stage: systemtest
   script:
-    - apt install openjdk-16-jre
-    - export JAVA_HOME=/usr/lib/jvm/openjdk-16-jdk
-    - export PATH=$PATH:$JAVA_HOME/bin
+    - export JAVA_HOME=/usr/lib/jvm/java-15-openjdk
     - ./acceptanceTest/gradlew cucumber
