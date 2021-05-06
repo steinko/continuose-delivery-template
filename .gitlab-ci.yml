@@ -81,5 +81,5 @@ systemtest:
   image: ubuntu
   stage: systemtest
   script:
-    - export JAVA_HOME=/usr/lib/jvm/java-15-openjdk
+    - export JAVA_HOME="/usr/lib/jvm/java-15-openjdk"
     - ./acceptanceTest/gradlew cucumber
