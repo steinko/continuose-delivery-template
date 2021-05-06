@@ -51,9 +51,8 @@ package:
      - docker context create node-arm64  --from default
      - docker buildx create --use --name mybuild node-amd64 
      - docker buildx create --append --name mybuild node-arm64
-     - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
      - docker login -u steinko -p RoxyMusic11
-     - docker push steinko/gradle-ci-cd
+     - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
 
 pulumi:
    image: ubuntu
