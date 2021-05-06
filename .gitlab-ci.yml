@@ -41,8 +41,8 @@ package:
      - ln -snf /usr/share/zoneinfo/$tzdata /etc/localtime && echo $tzdata > /etc/timezone
      - apt update -y
      - apt install docker-ce docker-ce-cli containerd.io -y tzdata
-     - service docker.service start
-     - service  containerd.service start
+     - service docker start
+     - service containerd start
      - docker run hello-world
      - export DOCKER_CLI_EXPERIMENTAL=enabled
      - docker buildx install
