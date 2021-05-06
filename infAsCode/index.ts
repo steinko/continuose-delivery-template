@@ -37,12 +37,13 @@ const dockeSeceret = new k8s.core.v1.Secret('dokcerl-secret', {
 
 
 export const deployment = new k8s.apps.v1.Deployment("hello-world-deployment", {
+	metadata: { labels: {app: "hello-world"},
+                         namespace: nameSpaceName },
     spec: {
         replicas: 1,
          selector: { matchLabels: {app: "hello-world"} },
         template: {
-            metadata: { labels: {app: "hello-world"},
-                         namespace: nameSpaceName },
+            
             spec: { 
 	                     
 	           containers: [{ name: "hello-world-image",
