@@ -31,7 +31,7 @@ package:
      - docker:dind
    stage: package
    script:
-     - docker build -t steinko/gradle-ci-cd .
+     - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
      - docker login -u steinko -p RoxyMusic11
      - docker push steinko/gradle-ci-cd
 
