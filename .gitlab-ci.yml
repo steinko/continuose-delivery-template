@@ -42,7 +42,6 @@ package:
      - apt update -y
      - apt install docker-ce docker-ce-cli containerd.io -y tzdata
      - service docker start
-     - service containerd start
      - docker run hello-world
      - export DOCKER_CLI_EXPERIMENTAL=enabled
      - docker buildx install
