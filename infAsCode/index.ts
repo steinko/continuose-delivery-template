@@ -65,7 +65,7 @@ export const serviceName = service.metadata.name;
 export const servicePublicIP = service.status.loadBalancer.ingress[0].ip
 
 
-const hostname = "*" + '.steinko.com'
+const hostname = "*.steinko.com"
 const ingress = new k8s.networking.v1beta1.Ingress('ingress', 
           { 
 	        metadata: {
