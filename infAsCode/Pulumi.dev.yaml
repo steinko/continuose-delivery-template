@@ -2,17 +2,3 @@ config:
   Gradle-Ci-CD:cloudLocation: europe-north1-a
   Gradle-Ci-CD:cloudProject: springboot22
   Gradle-Ci-CD:cloudRegion: europe-north1-a
-  Gradle-Ci-CD:dbPassword:
-    secure: AAABAI57oja8PsZ85pWOREDzsPRl5jqsLkYTk42B6wNA833ORVndVb+Lfw==
-  Gradle-Ci-CD:dbUserName: steinko
-  Gradle-Ci-CD:dockerPassword:
-    secure: AAABAAgROvkopB2TrEJN7A5hEpTgiO9VcC1q9AI4WiHqis5g2qyvNiSpLw==
-  Gradle-Ci-CD:dockerUserName: steinko
-  Gradle-Ci-CD:dokcerName: steinko
-  Gradle-Ci-CD:dokcerPassword:
-    secure: AAABAEn4aOtmw/vIfzOmfHwPLpve7in+KjV6PgsXqvBE7PiUMnY5y04OGA==
-  Gradle-Ci-CD:dokcerpassword:
-    secure: AAABANxTLLNtyvbbfR0/YlBRHe9EeFh4n7qRz1jHz3Uxlz/XQPDfOLbEGQ==
-  Gradle-Ci-CD:registry: docker.io
-  gcp:project: springboot22
-  gcp:zone: europe-north1-a

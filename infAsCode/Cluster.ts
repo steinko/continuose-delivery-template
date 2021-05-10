@@ -6,7 +6,7 @@ import * as config from "./config"
 const name = "gradle-ci-cd-cluster";
 // Create a GKE cluster
 const engineVersion = gcp.container.getEngineVersions({location:config.cloudRegion, project: config.cloudProject}).then(v => v.latestMasterVersion);
-const cluster = new gcp.container.Cluster(name, {
+export const cluster = new gcp.container.Cluster(name, { name: name,
 	project: config.cloudProject,
 	clusterAutoscaling: {enabled: true, resourceLimits:[ {resourceType: 'cpu', minimum:1 ,maximum:20 },
 	                                                     {resourceType: 'memory', minimum:1 ,maximum:64 }  
@@ -21,7 +21,10 @@ const cluster = new gcp.container.Cluster(name, {
             "https://www.googleapis.com/auth/compute",
             "https://www.googleapis.com/auth/devstorage.read_only",
             "https://www.googleapis.com/auth/logging.write",
-            "https://www.googleapis.com/auth/monitoring"
+            "https://www.googleapis.com/auth/monitoring",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/trace.append",
+            "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
         ],
     },
    location: config.cloudLocation,

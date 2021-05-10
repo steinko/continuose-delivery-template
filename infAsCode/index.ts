@@ -1,13 +1,14 @@
 import * as k8s from "@pulumi/kubernetes";
 import {clusterProvider} from "./Cluster"
+import * as gcp from "@pulumi/gcp";
+import * as pulumi from "@pulumi/pulumi";
 
 const name = "hello-world"
-export const nameSpace =  new k8s.core.v1.Namespace('staging',{},{provider: clusterProvider})
+export const nameSpace =  new k8s.core.v1.Namespace('staging',{metadata: {name:'staging'}},{provider: clusterProvider})
 export const nameSpaceName =  nameSpace.metadata.name;
-
-
-
 const appLabels = { appClass: name }
+
+
 export const deployment = new k8s.apps.v1.Deployment(name, {
 	metadata: { labels: appLabels,
                 namespace: nameSpaceName 
@@ -51,38 +52,32 @@ export const service = new k8s.core.v1.Service(name,
    {
 	  metadata: { 
 		 labels: appLabels,
-         namespace: nameSpaceName 
+          namespace: nameSpaceName ,
+          name:name,
+          annotations: { 'external-dns.alpha.kubernetes.io/hostname':'service.staging.steinko.org'}
       },
       spec: { 
 	           type: 'LoadBalancer',
-               ports: [{port: 8080, targetPort: "http" } ],
-	           selector: appLabels 
+               ports: [{port: 8080, targetPort: 8080, protocol:'TCP' } ],
+	           selector: appLabels,  
              } ,
          }, 
         {provider: clusterProvider} 
   ) 
+
 export const serviceName = service.metadata.name;
 export const servicePublicIP = service.status.loadBalancer.ingress[0].ip
 
 
-const hostname = "*.steinko.com"
-const ingress = new k8s.networking.v1beta1.Ingress('ingress', 
-          { 
-	        metadata: {
-		                name: 'ingress',
-                        namespace: nameSpaceName
-	                  }, 
-	        spec: {            
-                    rules:[{host: hostname}],
-                    backend:{ serviceName: service.metadata.name, servicePort:8080}
-                            }
-                  } ,{provider: clusterProvider} )
+const zone = new gcp.dns.ManagedZone("steinko-org", {dnsName: "steinko.org.", project: 'springboot22', name:'staging-zone'});
 
- 
-
-
-
-
-
+const serviceRecordSet = new gcp.dns.RecordSet("serviceRecordSet", {
+    name: "staging.steinko.org.",
+    type: "A",
+    ttl: 300,
+    project: 'springboot22',
+    managedZone: zone.name,
+     rrdatas: [servicePublicIP],
+});
 
 

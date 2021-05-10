@@ -10,4 +10,5 @@
         "@pulumi/kubernetesx": "^0.1.1",
         "@pulumi/pulumi": "^2.0.0"
     }
+   
 }
