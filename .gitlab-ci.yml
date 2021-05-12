@@ -20,6 +20,7 @@ infrastructure-unit-test:
     - chmod +x ./infAsCode/scripts/*.sh
     - ./infAsCode/scripts/npm-install.sh
     - cd  infAsCode
+    - npm install
     - npm test
     - cd ..
 
