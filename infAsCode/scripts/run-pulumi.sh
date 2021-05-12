@@ -12,8 +12,7 @@ chmod +x ./infAsCode/scripts/curl-install.sh
 cd infAsCode
 npm install
 
-export GOOGLE_CREDENTIALS=$(cat scripts/springboot22-0b39b2fdd02b.json)
-
+gcloud auth activate-service-account --key-file=scripts/springboot22-0b39b2fdd02b.json
 pulumi login
 pulumi stack select dev
 pulumi config set gcp:project springboot22
