@@ -9,12 +9,7 @@ export PATH=$PATH:$HOME/.pulumi/bin
 # Login into pulumi. This will require the PULUMI_ACCESS_TOKEN environment variable
 
 
-# nodejs
-apt install  nodejs -y
-curl -qL https://www.npmjs.com/install.sh | sh
-# yarn
-npm install npm@latest -g
-npm install
+npm-install.sh
 
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" |tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 apt install apt-transport-https ca-certificates gnupg -y

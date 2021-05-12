@@ -15,8 +15,8 @@ integration-test:
 
 infrastructure-unit-test:
   stage: integration-test
-  image: npn
   script:
+    - infAsCode/scripts/npm-install.sh
     - cd  infAsCode
     - npm test
     - cd ..
