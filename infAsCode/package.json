@@ -1,14 +1,22 @@
 {
     "name": "Gradle-Ci-CD",
     "devDependencies": {
-        "@types/node": "^10.0.0"
+        "@babel/core": "^7.14.0",
+        "@babel/preset-env": "^7.14.1",
+        "@babel/preset-typescript": "^7.13.0",
+        "@types/node": "^10.0.0",
+        "babel-jest": "^26.6.3",
+        "jest": "^26.6.3"
     },
     "dependencies": {
         "@pulumi/gcp": "^4.21.0",
         "@pulumi/gitlab": "^3.9.0",
         "@pulumi/kubernetes": "^2.0.0",
         "@pulumi/kubernetesx": "^0.1.1",
-        "@pulumi/pulumi": "^2.0.0"
+        "@pulumi/pulumi": "^2.0.0",
+        "jest-cli": "^26.6.3"
+    },
+    "scripts": {
+        "test": "jest"
     }
-   
 }
