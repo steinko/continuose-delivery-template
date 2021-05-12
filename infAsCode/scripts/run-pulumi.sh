@@ -5,6 +5,8 @@ set -e -x
 
 # Add the pulumi CLI to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+chmod +x ./infAsCode/scripts/curl-install.sh
+./infAsCode/scripts/curl-install.sh
 
 
 npm install
