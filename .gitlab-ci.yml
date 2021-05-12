@@ -18,7 +18,7 @@ infrastructure-unit-test:
   image: ubuntu
   script:
     - chmod +x ./infAsCode/scripts/*.sh
-    - infAsCode/scripts/npm-install.sh
+    - ./infAsCode/scripts/npm-install.sh
     - cd  infAsCode
     - npm test
     - cd ..
