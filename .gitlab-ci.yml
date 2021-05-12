@@ -17,7 +17,9 @@ integration-test:
 infrastructure-unit-test:
   stage: integration-test
   script:
-    - infAsCode/npm test
+    - cd  infAsCode
+    - npm test
+    - cd ..
 
 
 
