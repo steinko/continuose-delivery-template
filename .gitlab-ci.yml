@@ -4,7 +4,6 @@ default:
   
 stages:
   - integration-test
-  - assemble-artefact
   - build-image
   - provide-infrastructure
   - acceptance-test
@@ -16,6 +15,7 @@ integration-test:
 
 infrastructure-unit-test:
   stage: integration-test
+  image: npn
   script:
     - cd  infAsCode
     - npm test
@@ -24,7 +24,7 @@ infrastructure-unit-test:
 
 
 assemble-artefact:
-  stage: assemble-artefact
+  stage: integration-test
   script:
     - ./gradlew assemble
   artifacts:
