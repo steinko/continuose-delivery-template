@@ -15,6 +15,7 @@ integration-test:
 
 infrastructure-unit-test:
   stage: integration-test
+  image: ubuntu
   script:
     - chmod +x ./infAsCode/scripts/*.sh
     - infAsCode/scripts/npm-install.sh
