@@ -11,3 +11,4 @@ gcp_ts_cloudrun/node_modules
 infTest/node_modules
 acceptanceTest/app/build
 acceptanceTest/gradle
+infAsCide/package-lock.json

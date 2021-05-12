@@ -14,7 +14,7 @@ integration-test:
   script:
     - ./gradlew check
 
-infrastructure-unit-test
+infrastructure-unit-test:
   stage: integraion-test
   script:
     - infAsCode/npm test
