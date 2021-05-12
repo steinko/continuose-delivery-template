@@ -16,6 +16,7 @@ integration-test:
 infrastructure-unit-test:
   stage: integration-test
   script:
+    - chmod +x ./infAsCode/scripts/*.sh
     - infAsCode/scripts/npm-install.sh
     - cd  infAsCode
     - npm test
