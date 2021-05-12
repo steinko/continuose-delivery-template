@@ -1,7 +1,7 @@
 #!/bin/bash
 
-chmod +x curl-install.sh
-curl-install.sh
+chmod +x ./infAsCode/scripts/curl-install.sh
+./infAsCode/scripts/curl-install.sh
 
 curl -fsSL https://get.pulumi.com | sh
 export PATH=$PATH:$HOME/.pulumi/bin
