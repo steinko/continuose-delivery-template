@@ -54,11 +54,11 @@ export const service = new k8s.core.v1.Service(name,
 		 labels: appLabels,
           namespace: nameSpaceName ,
           name:name,
-          annotations: { 'external-dns.alpha.kubernetes.io/hostname':'service.staging.steinko.org'}
+          annotations: { 'external-dns.alpha.kubernetes.io/hostname':'staging.steinko.org'}
       },
       spec: { 
 	           type: 'LoadBalancer',
-               ports: [{port: 8080, targetPort: 8080, protocol:'TCP' } ],
+               ports: [{port: 80, targetPort: 8080, protocol:'TCP' } ],
 	           selector: appLabels,  
              } ,
          }, 
