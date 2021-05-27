@@ -6,7 +6,9 @@ stages:
   - integration-test
   - build-image
   - provide-infrastructure
+  - deployment-test
   - acceptance-test
+  - destroy-infrastructure
 
 integration-test:
   stage: integration-test
@@ -62,6 +64,7 @@ build-image:
      - docker buildx create --append --name mybuild node-arm64
      - docker login -u steinko -p RoxyMusic11
      - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
+   
 
 provide-infrastructure:
    image: ubuntu
@@ -71,6 +74,30 @@ provide-infrastructure:
     - ./infAsCode/scripts/setup.sh
    script:
     - ./infAsCode/scripts/run-pulumi.sh
+
+deployment-test:
+  stage: deployment-test
+  before_script:
+    - cd infIntTest
+    - export CURRENT_BUILD_PATH=$(pwd)
+    - echo $PATH
+    - rm -rf $HOME/golang
+    - rm -rf $HOME/gopath
+    - mkdir -p $HOME/golang # for GOROOT (contains the Go binary & core packages)
+    - mkdir -p $HOME/gopath # for GOPATH (contains code and external packages)
+    - curl http://storage.googleapis.com/golang/go1.5.2.linux-amd64.tar.gz 2>/dev/null > go1.5.2.linux-amd64.tar.gz
+    - tar -C $HOME/golang -xzf go1.5.2.linux-amd64.tar.gz
+    - export GOROOT=$HOME/golang/go
+    - export GOPATH=$HOME/gopath
+    - export PATH=$PATH:$GOROOT/bin
+    - export PATH=$PATH:$GOPATH/bin
+    - (if [[ "$(go version)" == *"go version go1.5"* ]]; then echo "✓ Go binary installed!"; else echo "Go binary not installed"; exit -1; fi);
+    - go version
+    - echo $PATH
+    - go env
+    - which go
+  script:
+    - godod
    
 
 acceptance-test:
@@ -80,5 +107,10 @@ acceptance-test:
   script:
     - cd ./acceptanceTest
     - gradle cucumber
+
+destroy-infrastructure:
+   stage: destroy-infrastucture
+   script:
+     - pulumi destroy --yes
   
  
