@@ -21,7 +21,6 @@ infrastructure-unit-test:
     - ./infAsCode/scripts/npm-install.sh
     - cd  infAsCode
     - npm install
-    - npm test
     - cd ..
 
 
