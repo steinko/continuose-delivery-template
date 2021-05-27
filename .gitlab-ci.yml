@@ -109,7 +109,7 @@ acceptance-test:
     - gradle cucumber
 
 destroy-infrastructure:
-   stage: destroy-infrastucture
+   stage: destroy-infrastructure
    script:
      - pulumi destroy --yes
   
