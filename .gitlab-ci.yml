@@ -67,7 +67,6 @@ provide-infrastructure:
    image: ubuntu
    stage: provide-infrastructure
    before_script:
-    - export GOOGLE_CREDENTIALS=$GCP_SERVICE_ACCOUNT
     - chmod +x ./infAsCode/scripts/*.sh
     - ./infAsCode/scripts/setup.sh
    script:

@@ -12,3 +12,4 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 apt install apt-transport-https ca-certificates gnupg -y
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 apt update -y
+apt install google-cloud-sdk -y
