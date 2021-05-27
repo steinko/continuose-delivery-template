@@ -15,3 +15,5 @@ apt update -y
 apt install google-cloud-sdk -y
 gcloud config configurations create configuration
 gcloud config configurations activate configuration
+echo $GCP_SERVICE_ACCOUNT > serviceaccount.json
+gcloud auth activate-service-account --key-file=serviceaccount.json
