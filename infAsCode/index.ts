@@ -2,12 +2,20 @@ import * as k8s from "@pulumi/kubernetes";
 import {clusterProvider} from "./Cluster"
 import * as gcp from "@pulumi/gcp";
 import * as pulumi from "@pulumi/pulumi";
+import {nameSpace} from "./NameSpace"
+import {gcpCredentials} from "./GcpCredentials"
+import {serviceAccount} from "./GcpServiceAccount"
+import {serviceAccountKey} from "./ServiceAccountKey"
+
 
 const name = "hello-world"
-export const nameSpace =  new k8s.core.v1.Namespace('staging',{metadata: {name:'staging'}},{provider: clusterProvider})
-export const nameSpaceName =  nameSpace.metadata.name;
-const appLabels = { appClass: name }
 
+export const nameSpaceName =  nameSpace.metadata.name;
+export const appLabels = { appClass: name }
+
+gcpCredentials
+serviceAccount
+serviceAccountKey
 
 export const deployment = new k8s.apps.v1.Deployment(name, {
 	metadata: { labels: appLabels,
