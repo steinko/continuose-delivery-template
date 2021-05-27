@@ -95,7 +95,6 @@ deployment-test:
     - go version
     - echo $PATH
     - go env
-    - which go
   script:
     - godod
    
