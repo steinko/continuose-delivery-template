@@ -95,8 +95,10 @@ deployment-test:
     - go version
     - echo $PATH
     - go env
+    - go get github.com/cucumber/godog/cmd/godog@v0.11.0
+    - export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
   script:
-    - godod
+    - godog
    
 
 acceptance-test:
