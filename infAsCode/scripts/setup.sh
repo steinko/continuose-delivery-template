@@ -13,5 +13,5 @@ apt install apt-transport-https ca-certificates gnupg -y
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 apt update -y
 apt install google-cloud-sdk -y
-gcloud config configurations create myConfiguration
-gcloud config configurations activate myConfiguration
+gcloud config configurations create configuration
+gcloud config configurations activate configuration
