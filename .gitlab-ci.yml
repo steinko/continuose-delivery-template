@@ -103,8 +103,8 @@ destroy-infrastructure:
    before_script:
     - chmod +x ./infAsCode/scripts/*.sh
     - ./infAsCode/scripts/setup.sh
+
    script:
-    - cd infAsCode
-    - pulumi destroy --yes
+    - ./infAsCode/scripts/destroy-pulumi.sh
   
  
