@@ -48,8 +48,8 @@ export const deployment = new k8s.apps.v1.Deployment(name, {
 },{provider: clusterProvider});
 
 export const deploymentName = deployment.metadata.name;
-
-export const service = new k8s.core.v1.Service(name, 
+const aServiceName = name + "-service"
+export const service = new k8s.core.v1.Service(aServiceName, 
    {
 	  metadata: { 
 		 labels: appLabels,
@@ -60,25 +60,17 @@ export const service = new k8s.core.v1.Service(name,
       spec: { 
 	           type: 'LoadBalancer',
                ports: [{port: 80, targetPort: 8080, protocol:'TCP' } ],
-	           selector: appLabels,  
+	           selector: appLabels, 
+               clusterIP: "10.43.253.97"
              } ,
          }, 
         {provider: clusterProvider} 
   ) 
 
 export const serviceName = service.metadata.name;
-export const servicePublicIP = service.status.loadBalancer.ingress[0].ip
+export const hostName = service.status.loadBalancer.ingress[0].hostname
 
 
-const zone = new gcp.dns.ManagedZone("steinko-org", {dnsName: "steinko.org.", project: 'springboot22', name:'staging-zone'});
 
-const serviceRecordSet = new gcp.dns.RecordSet("serviceRecordSet", {
-    name: "staging.steinko.org.",
-    type: "A",
-    ttl: 300,
-    project: 'springboot22',
-    managedZone: zone.name,
-     rrdatas: [servicePublicIP],
-});
 
 
