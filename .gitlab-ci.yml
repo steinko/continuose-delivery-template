@@ -98,9 +98,13 @@ acceptance-test:
     - cd ..
 
 destroy-infrastructure:
+   image: ubuntu
    stage: destroy-infrastructure
+   before_script:
+    - chmod +x ./infAsCode/scripts/*.sh
+    - ./infAsCode/scripts/setup.sh
    script:
-     - cd infAsCode
-     - pulumi destroy --yes
+    - cd infAsCode
+    - pulumi destroy --yes
   
  
