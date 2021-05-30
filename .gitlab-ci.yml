@@ -95,10 +95,12 @@ acceptance-test:
   script:
     - cd ./acceptanceTest
     - gradle cucumber
+    - cd ..
 
 destroy-infrastructure:
    stage: destroy-infrastructure
    script:
+     - cd infAsCode
      - pulumi destroy --yes
   
  
