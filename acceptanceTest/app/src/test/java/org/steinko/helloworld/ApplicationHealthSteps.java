@@ -18,7 +18,7 @@ public class ApplicationHealthSteps {
 
 	@Then("status {string} is displayed")
 	public void status_is_displayed(String string) {
-		String uri="http://staging.steinko.org";
+		String uri="http://35.228.10.250";
 		RestAssured.baseURI = uri;	
 		 given().
 	      when().

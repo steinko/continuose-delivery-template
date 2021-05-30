@@ -84,7 +84,9 @@ deployment-test:
     - go get github.com/cucumber/godog/cmd/godog@v0.11.0
     - export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
   script:
+    - godog
     - cd ..
+
    
 
 acceptance-test:
