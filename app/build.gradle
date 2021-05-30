@@ -1,7 +1,7 @@
 plugins {    
     id 'org.springframework.boot' version '2.4.5'
     id 'java'
-    id 'checkstyle'
+    //id 'checkstyle'
 }
 
 repositories {
@@ -24,9 +24,9 @@ test {
 	useJUnitPlatform()
 }
 
-tasks.withType(Checkstyle) {
-  reports {
-        xml.enabled false
-        html.enabled true
-  }
-}
+//tasks.withType(Checkstyle) {
+ // reports {
+ //       xml.enabled false
+ //       html.enabled true
+ // }
+//}
