@@ -35,7 +35,9 @@ func (a *apiFeature)isDisplayed(aBody string) error {
 func (a *apiFeature) theURLHasBeenEntered(url string) (err error) {
       defer failHandler(&err)
 	  resp, err := http.Get("http://35.228.10.250/helloworld")
-	  if err !=nil { }
+	  if err !=nil { 
+	      return fmt.Errorf("error hello world url: %v", err)
+    }}
 	  defer resp.Body.Close()
 	  return err
 }
