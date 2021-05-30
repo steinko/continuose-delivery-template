@@ -85,6 +85,7 @@ deployment-test:
     - export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
   script:
     - godog
+    - cd ..
    
 
 acceptance-test:
