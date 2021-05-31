@@ -66,13 +66,9 @@ build-image:
      - ln -snf /usr/share/zoneinfo/$tzdata /etc/localtime && echo $tzdata > /etc/timezone
      - apt update -y
      - apt install docker-ce docker-ce-cli containerd.io -y tzdata
+     - apt update -y
      - service docker start
      - service docker restart
-     - service docker stop
-     - cd /var/run/docker/libcontainerd
-     - rm -rf containerd/*
-     - rm -f docker-containerd.pid
-     - service docker start
      - service docker status
      - docker run hello-world
      - export DOCKER_CLI_EXPERIMENTAL=enabled
