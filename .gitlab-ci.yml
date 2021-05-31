@@ -63,6 +63,8 @@ build-image:
      - apt install docker-ce docker-ce-cli containerd.io -y tzdata
      - service docker start
      - service docker status
+     - service docker start
+     - service docker start
      - docker run hello-world
      - export DOCKER_CLI_EXPERIMENTAL=enabled
      - docker buildx install
