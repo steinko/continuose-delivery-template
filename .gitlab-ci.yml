@@ -44,12 +44,12 @@ check-code-quality:
 unit-test-frontend:
   stage: integration-test
   before_script:
+    - cd frontend
     - chmod +x ./scripts/*.sh
     - ./scripts/npm-install.sh
   script:
-    -cd frontend
-    -npm test
-    -cd ..
+    - npm test
+    - cd ..
 
 assemble-artefact:
   stage: integration-test
