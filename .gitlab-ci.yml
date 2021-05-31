@@ -69,6 +69,8 @@ build-image:
      - service docker start
      - service docker restart
      - service docker status
+     - service docker stop
+     - nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
      - docker run hello-world
      - export DOCKER_CLI_EXPERIMENTAL=enabled
      - docker buildx install
