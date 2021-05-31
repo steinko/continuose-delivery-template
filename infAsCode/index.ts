@@ -61,7 +61,7 @@ export const service = new k8s.core.v1.Service(aServiceName,
 	           type: 'LoadBalancer',
                ports: [{port: 80, targetPort: 8080, protocol:'TCP' } ],
 	           selector: appLabels, 
-               clusterIP: "10.43.253.97"
+               loadBalancerIP: "10.43.253.97"
              } ,
          }, 
         {provider: clusterProvider} 

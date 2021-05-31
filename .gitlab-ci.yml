@@ -72,7 +72,7 @@ build-image:
      - docker context create node-arm64  --from default
      - docker buildx create --use --name mybuild node-amd64 
      - docker buildx create --append --name mybuild node-arm64
-     - docker login -u steinko -p RoxyMusic11
+     - docker login -u steinko -p $DOCKER_PASSWORD
      - docker buildx build --platform linux/amd64 --push -t steinko/gradle-ci-cd .
    
 
