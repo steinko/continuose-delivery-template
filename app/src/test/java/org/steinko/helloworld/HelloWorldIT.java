@@ -12,22 +12,28 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.server.LocalServerPort;
 
-
+/**
+ * Hello World Integration Test.
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
 public class HelloWorldIT {
-	
+	/**
+	 * Web application context.
+	 */
 	@Autowired
     private WebApplicationContext webApplicationContext;
 	
+	/**
+	 * Local server port.
+	 */
 	@LocalServerPort
 	 private  int localServerPort;
 	
-	
+	/**
+	 * Should return hello world.
+	 */
 	@Test
-	public void shoudGetMessage()  { 
-		
-	
+	public void shoudReturnHelloWorld()  { 
 		given()
 		.webAppContextSetup(webApplicationContext).
 		when()
@@ -35,7 +41,5 @@ public class HelloWorldIT {
 		then()
 		  .statusCode(OK.value())
 	      .body(is(equalTo("Hello World")));
-		
-     }
-	     
+     }     
 }

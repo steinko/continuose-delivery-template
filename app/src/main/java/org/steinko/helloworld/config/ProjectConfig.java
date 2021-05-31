@@ -1,8 +1,6 @@
 package org.steinko.helloworld.config;
 
 import org.springframework.security.core.userdetails.User;
-import static org.springframework.security.core.userdetails.User.UserBuilder;
-import static org.springframework.security.core.userdetails.User.withUsername;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,29 +9,41 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-
+/**
+ * Security configuration for the application.
+ */
 @Configuration
-public class ProjectConfig extends WebSecurityConfigurerAdapter{
-
+public class ProjectConfig extends WebSecurityConfigurerAdapter {
+    /**
+     * User Detail Service.
+     * @return user detail service.
+     */
 	public UserDetailsService userDetailService() {
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
 		UserDetails user = User.withUsername("steinko")
 				       .passwordEncoder(encoder::encode)
 				       .password("1234")
 				       .authorities("read")
 				       .build();
-		InMemoryUserDetailsManager uds = new InMemoryUserDetailsManager(user);
-		  
-		
+		InMemoryUserDetailsManager uds = 
+		  new InMemoryUserDetailsManager(user);
 		return uds;
 	}
-
+	
+	/**
+	 * Password Encoder.
+	 * @return password encoder.
+	 */
 	public PasswordEncoder passwordEncoder() {		
-		return new BCryptPasswordEncoder() ;
+		return new BCryptPasswordEncoder();
 	}
 	
+	/**
+	 * Configure Security.
+	 * @param http security adress.
+	 * @throws Exception exception.
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.httpBasic();
