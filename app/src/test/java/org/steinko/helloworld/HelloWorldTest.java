@@ -30,7 +30,7 @@ public class HelloWorldTest {
 	@Test
     public void shouldReturnHelloWorld() {
     	HelloWorld helloWorld = new HelloWorld();
-    	assertEquals(helloWorld.getMessage(), "Hello World");
+    	assertEquals("Hello World", helloWorld.getMessage());
     }
 	
 	/**

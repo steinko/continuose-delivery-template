@@ -2,6 +2,7 @@ package org.steinko.helloworld.config;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,14 +20,16 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
      */
 	public UserDetailsService userDetailService() {
 		
-		var encoder = new BCryptPasswordEncoder();
-		var user = User.withUsername("steinko")
-				       .passwordEncoder(encoder::encode)
-				       .password("1234")
-				       .authorities("read")
-				       .build();
+			BCryptPasswordEncoder encoder =
+					new BCryptPasswordEncoder();
+			UserDetails user = User.withUsername("steinko")
+					       .passwordEncoder(encoder::encode)
+					       .password("1234")
+					       .authorities("read")
+					       .build();
+			
+			return  new InMemoryUserDetailsManager(user);
 		
-		return new InMemoryUserDetailsManager(user);
 	}	
 	
 	/**
