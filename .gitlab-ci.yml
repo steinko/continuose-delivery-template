@@ -41,6 +41,14 @@ check-code-quality:
   script:
     - ./gradlew sonarqube
 
+unit-test-frontend:
+  image: npm
+  stage: integration-test
+  script:
+    -cd frontend
+    -npm test
+    -cd ..
+
 assemble-artefact:
   stage: integration-test
   script:

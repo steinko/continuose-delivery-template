@@ -22,7 +22,8 @@ public class HelloWorldSteps {
 
 	@Then("{string} is displayed")
 	public void is_displayed(String string) {
-		String uri="http://35.228.10.250";
+		
+        String uri="http://" + IpAdressFile.getIpAdress();
 		RestAssured.baseURI = uri;	
 		 given().
 	      when().

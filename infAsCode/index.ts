@@ -1,7 +1,7 @@
 import * as k8s from "@pulumi/kubernetes";
 import {clusterProvider} from "./Cluster"
-import * as gcp from "@pulumi/gcp";
 import {nameSpace} from "./NameSpace"
+import * as pulumi from "@pulumi/pulumi";
 
 
 const name = "hello-world"
@@ -45,7 +45,9 @@ export const deployment = new k8s.apps.v1.Deployment(name, {
             }
         }
     }
-},{provider: clusterProvider});
+},{provider: clusterProvider});appLabels
+
+
 
 export const deploymentName = deployment.metadata.name;
 const aServiceName = name + "-service"
@@ -60,15 +62,22 @@ export const service = new k8s.core.v1.Service(aServiceName,
 	           type: 'LoadBalancer',
                ports: [{port: 80, targetPort: 8080, protocol:'TCP' } ],
 	           selector: appLabels, 
-               loadBalancerIP: "10.43.253.97"
              } ,
          }, 
         {provider: clusterProvider} 
   ) 
 
 export const serviceName = service.metadata.name;
-export const hostName = service.status.loadBalancer.ingress[0].hostname
+export const externalIpAdress = service.status.loadBalancer.ingress[0].ip
 
+
+  externalIpAdress.apply(ipAdress => {
+	    var fs = require('fs');
+        fs.appendFile('../acceptanceTest/app/src/test/java/org/steinko/helloworld/externalIpAdress.txt', ipAdress,  (err:any) => {
+           if (err) throw err;
+           console.log('Saved!');
+        })
+   })
 
 
 

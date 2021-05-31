@@ -9,6 +9,10 @@ import io.restassured.RestAssured;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
 public class ApplicationHealthSteps {
 
 	@When("Checking Application Health")
@@ -18,8 +22,10 @@ public class ApplicationHealthSteps {
 
 	@Then("status {string} is displayed")
 	public void status_is_displayed(String string) {
-		String uri="http://35.228.10.250";
-		RestAssured.baseURI = uri;	
+		      
+		 String uri="http://" +  IpAdressFile.getIpAdress();
+		 RestAssured.baseURI = uri;	
+		        
 		 given().
 	      when().
 	         get("/actuator/health").
