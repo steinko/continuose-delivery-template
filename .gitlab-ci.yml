@@ -43,6 +43,7 @@ check-code-quality:
 
 unit-test-frontend:
   stage: integration-test
+  image: ubuntu
   before_script:
     - cd frontend
     - chmod +x ./scripts/*.sh
