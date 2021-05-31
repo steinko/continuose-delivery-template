@@ -55,7 +55,6 @@ export const service = new k8s.core.v1.Service(aServiceName,
 		 labels: appLabels,
           namespace: nameSpaceName ,
           name:name,
-          annotations: { 'external-dns.alpha.kubernetes.io/hostname':'staging.steinko.org'}
       },
       spec: { 
 	           type: 'LoadBalancer',
