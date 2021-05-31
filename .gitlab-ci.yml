@@ -26,6 +26,15 @@ infrastructure-unit-test:
     - cd ..
 
 
+generate-code-coverage:
+  stage: integration-test
+  script:
+    - ./gradlew jacocoTestReport
+
+generate-java-doc:
+  stage: integration-test
+  script:
+    - ./gradlew javadoc
 
 assemble-artefact:
   stage: integration-test
