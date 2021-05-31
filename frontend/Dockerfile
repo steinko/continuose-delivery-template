@@ -1,15 +1,14 @@
-FROM node:14.3.0 as build
+FROM node:latest as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
-COPY . ./
+COPY ./public /public
+COPY ./src src
+COPY ./package.json package.json
+
 RUN npm install
 RUN npm audit fix
 RUN npm run build
+RUN npm install -g serve
 
-# production environment
-FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
-EXPOSE  5000
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE  3000
+CMD ["serve", "-s", "build"]

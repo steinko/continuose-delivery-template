@@ -12,3 +12,7 @@ infTest/node_modules
 acceptanceTest/app/build
 acceptanceTest/gradle
 infAsCide/package-lock.json
+acceptanceTest/externalIpAdress.txt
+externalIpAdress.txt
+frontend/package-lock.json
+infAsCode/externalIpAdress.txt

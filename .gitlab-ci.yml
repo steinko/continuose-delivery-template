@@ -42,8 +42,10 @@ check-code-quality:
     - ./gradlew sonarqube
 
 unit-test-frontend:
-  image: npm
   stage: integration-test
+  before_script:
+    - chmod +x ./scripts/*.sh
+    - ./scripts/npm-install.sh
   script:
     -cd frontend
     -npm test
