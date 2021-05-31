@@ -22,7 +22,7 @@ public class HelloWorldTest {
 	@Test
     public void shouldExist() {
 	   assertNotNull(new HelloWorld());
-  }
+    }
 	
 	/**
 	 * Should return hello world.
@@ -36,19 +36,18 @@ public class HelloWorldTest {
 	/**
 	 * Should return hello world.
 	 */
-	
 	@Test
     public void shouldReturnMessage() {
 		
-	HelloWorld helloWorld = new HelloWorld();
+	    HelloWorld helloWorld = new HelloWorld();
 	
-	 given().
-        standaloneSetup(helloWorld)
-     .when()
-       .get("/helloworld")
-     .then()
-    .statusCode(OK.value())
-    .body(is(equalTo("Hello World")));
+	    given()
+           .standaloneSetup(helloWorld)
+       .when()
+          .get("/helloworld")
+       .then()
+           .statusCode(OK.value())
+           .body(is(equalTo("Hello World")));
 	 }
 
 

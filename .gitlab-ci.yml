@@ -36,6 +36,11 @@ generate-java-doc:
   script:
     - ./gradlew javadoc
 
+check-code-quality:
+  stage: integration-test
+  script:
+    - ./gradlew sonarqube
+
 assemble-artefact:
   stage: integration-test
   script:

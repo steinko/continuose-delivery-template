@@ -17,6 +17,7 @@ import org.springframework.boot.web.server.LocalServerPort;
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class HelloWorldIT {
+	
 	/**
 	 * Web application context.
 	 */
@@ -35,7 +36,7 @@ public class HelloWorldIT {
 	@Test
 	public void shoudReturnHelloWorld()  { 
 		given()
-		.webAppContextSetup(webApplicationContext).
+		  .webAppContextSetup(webApplicationContext).
 		when()
 		  .get("http://localhost:" + localServerPort + "/helloworld").
 		then()
