@@ -6,16 +6,19 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "eslint-plugin-jest": "^24.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^1.1.5",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docgen": "react-docgen src -e [src/*.test.js,src/setupTests.js,src/reportWebVitals.js,src/index.js ]",
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +37,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-testing-library": "^4.6.0",
+    "react-docgen": "^5.4.0"
   }
 }

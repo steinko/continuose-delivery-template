@@ -52,6 +52,17 @@ integration-test-frontend:
     - npm run test -- --coverage --watchAll=false
     - cd ..
 
+lint-frontend:
+  stage: integration-test
+  image: ubuntu
+  before_script:
+    - cd frontend
+    - chmod +x ./scripts/*.sh
+    - ./scripts/npm-install.sh
+  script:
+    - npm run lint
+    - cd ..
+
 assemble-artefact:
   stage: integration-test
   script:
