@@ -15,7 +15,7 @@ integration-test:
   script:
     - ./gradlew check
 
-infrastructure-unit-test:
+static-security-integration-test:
   stage: integration-test
   image: ubuntu
   script:
@@ -23,6 +23,8 @@ infrastructure-unit-test:
     - ./infAsCode/scripts/npm-install.sh
     - cd  infAsCode
     - npm install
+    - npm run auth 
+    - npm run snyk  
     - cd ..
 
 
@@ -49,6 +51,7 @@ integration-test-frontend:
     - chmod +x ./scripts/*.sh
     - ./scripts/npm-install.sh
   script:
+    - npm install
     - npm run test -- --coverage --watchAll=false
     - cd ..
 
@@ -60,6 +63,7 @@ lint-frontend:
     - chmod +x ./scripts/*.sh
     - ./scripts/npm-install.sh
   script:
+    - npm install
     - npm run lint
     - cd ..
 

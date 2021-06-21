@@ -7,18 +7,22 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "eslint-plugin-jest": "^24.3.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^1.1.5",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "^4.0.0",
+    "snyk": "^1.639.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "snyk test && react-scripts test",
     "eject": "react-scripts eject",
     "docgen": "react-docgen src -e [src/*.test.js,src/setupTests.js,src/reportWebVitals.js,src/index.js ]",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "auth": "snyk auth f57069f4-5360-4d3a-9d49-27f86c695d48",
+    "wizard": "snyk wizard",
+    "snyk": "snyk test"
   },
   "eslintConfig": {
     "extends": [
