@@ -90,7 +90,7 @@ build-backend-image:
      - docker buildx create --use --name mybuild node-amd64 
      - docker buildx create --append --name mybuild node-arm64
      - docker login -u steinko -p $DOCKER_PASSWORD
-     - docker buildx build --platform linux/amd64 --push -t steinko/hellowrld/backend .
+     - docker buildx build --platform linux/amd64 --push -t steinko:helloworld:backend .
    
 build-frontend-image:
    image: ubuntu
@@ -122,7 +122,7 @@ build-frontend-image:
      - docker buildx create --use --name mybuild node-amd64 
      - docker buildx create --append --name mybuild node-arm64
      - docker login -u steinko -p $DOCKER_PASSWORD
-     - docker buildx build --platform linux/amd64 --push -t steinko/helloworld/frontend .
+     - docker buildx build --platform linux/amd64 --push -t steinko:helloworld:frontend .
    
 
 
