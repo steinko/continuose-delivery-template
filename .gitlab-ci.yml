@@ -41,7 +41,7 @@ check-code-quality:
   script:
     - ./gradlew sonarqube
 
-unit-test-frontend:
+integration-test-frontend:
   stage: integration-test
   image: ubuntu
   before_script:
@@ -49,7 +49,7 @@ unit-test-frontend:
     - chmod +x ./scripts/*.sh
     - ./scripts/npm-install.sh
   script:
-    - npm test
+    - npm run test -- --coverage --watchAll=false
     - cd ..
 
 assemble-artefact:
