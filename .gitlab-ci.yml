@@ -1,7 +1,6 @@
 default:
   image: openjdk:15
-
-  
+ 
 stages:
   - integration-test
   - build-image
@@ -15,35 +14,36 @@ integration-test:
   script:
     - ./gradlew check
 
-static-security-integration-test:
+frontend-static-security-integration-test:
   stage: integration-test
   image: ubuntu
+  before_script:
+    - cd frontend
+    - chmod +x ./scripts/*.sh
+    - ./scripts/npm-install.sh
   script:
-    - chmod +x ./infAsCode/scripts/*.sh
-    - ./infAsCode/scripts/npm-install.sh
-    - cd  infAsCode
     - npm install
     - npm run auth 
     - npm run snyk  
     - cd ..
 
 
-generate-code-coverage:
+backend-generate-code-coverage:
   stage: integration-test
   script:
     - ./gradlew jacocoTestReport
 
-generate-java-doc:
+backend-generate-java-doc:
   stage: integration-test
   script:
     - ./gradlew javadoc
 
-check-code-quality:
+backend-check-code-quality:
   stage: integration-test
   script:
     - ./gradlew sonarqube
 
-integration-test-frontend:
+frontend-integration-test:
   stage: integration-test
   image: ubuntu
   before_script:
@@ -55,7 +55,7 @@ integration-test-frontend:
     - npm run test -- --coverage --watchAll=false
     - cd ..
 
-lint-frontend:
+frontend-lint:
   stage: integration-test
   image: ubuntu
   before_script:
@@ -67,7 +67,7 @@ lint-frontend:
     - npm run lint
     - cd ..
 
-assemble-artefact:
+backend-assemble-artefact:
   stage: integration-test
   script:
     - ./gradlew assemble
@@ -76,7 +76,7 @@ assemble-artefact:
       - ./app/build/libs/app.jar 
 
 
-build-backend-image:
+backend-build-image:
    image: ubuntu
    stage: build-image
    script:
@@ -107,7 +107,7 @@ build-backend-image:
      - docker login -u steinko -p $DOCKER_PASSWORD
      - docker buildx build --platform linux/amd64 --push -t steinko/helloworld-backend .
    
-build-frontend-image:
+frontend-build-image:
    image: ubuntu
    stage: build-image
    script:

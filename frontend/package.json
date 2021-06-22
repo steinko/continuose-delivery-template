@@ -15,15 +15,15 @@
   },
 
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "snyk test && react-scripts test",
-    "eject": "react-scripts eject",
+    "start":  "react-scripts start",
+    "build":  "react-scripts build",
+    "test":   "react-scripts test",
+    "eject":  "react-scripts eject",
     "docgen": "react-docgen src -e [src/*.test.js,src/setupTests.js,src/reportWebVitals.js,src/index.js ]",
-    "lint": "eslint src",
-    "auth": "snyk auth f57069f4-5360-4d3a-9d49-27f86c695d48",
+    "lint":   "eslint src",
+    "auth":   "snyk auth f57069f4-5360-4d3a-9d49-27f86c695d48",
     "wizard": "snyk wizard",
-    "snyk": "snyk test"
+    "snyk":   "snyk test"
   },
   "eslintConfig": {
     "extends": [
