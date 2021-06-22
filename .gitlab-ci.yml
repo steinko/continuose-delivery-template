@@ -25,7 +25,7 @@ frontend-static-security-integration-test:
     - npm install
     - npm run auth 
     - npm run snyk 
-    - if [ $? eq 1 ]
+    - if [ $? -eq 1 ]
     - then
     - echo "List error and not stop the CI/CD prosess"
     - exit 0
