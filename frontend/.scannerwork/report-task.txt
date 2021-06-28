@@ -1,0 +1,7 @@
+organization=steinko-github
+projectKey=frontend-CI-CD
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.21322
+dashboardUrl=https://sonarcloud.io/dashboard?id=frontend-CI-CD
+ceTaskId=AXpReNPdvCkMvNBTOr0L
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXpReNPdvCkMvNBTOr0L
