@@ -3,7 +3,6 @@ default:
  
 stages:
   - integration-test
-  - build-image
   - provide-infrastructure
   - deployment-test
   - acceptance-test
@@ -13,7 +12,7 @@ backend- static-security-integration-test:
   stage: integration-test
   image: docker:19.03.12
   script:
-    - docker run -it -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
+    - docker run  -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
 
 
 backend-integration-test:
