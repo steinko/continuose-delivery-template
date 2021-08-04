@@ -9,27 +9,27 @@ stages:
 
  
 backend-integration-test:
-  stage: continuose-integration
+  stage: continuose-intgeration
   script:
     - ./gradlew chec
 
 backend-generate-code-coverage:
-  stage: continuose-integration
+  stage: continuose-intgeration
   script:
     - ./gradlew jacocoTestReport
 
 backend-generate-java-doc:
-  stage: continuose-integration
+  stage: continuose-intgeration
   script:
     - ./gradlew javadoc
 
 backend-check-code-quality:
-  stage: continuose-integration
+  stage: continuose-intgeration
   script:
     - ./gradlew sonarqube
 
 frontend-integration-test:
-  stage: continuose-integration
+  stage: continuose-intgeration
   image: node
   before_script:
     - cd frontend
@@ -49,7 +49,7 @@ frontend-lint:
     - cd ..
 
 backend-assemble-artefact:
-  stage: continuose-integrationt
+  stage: continuose-intgeration
   script:
     - ./gradlew assemble
   artifacts:
