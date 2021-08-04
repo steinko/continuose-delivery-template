@@ -65,8 +65,8 @@ provide-infrastructure:
    script:
     - cd deploymentaws
     - npm install
-    - export PULUMI_ACCESS_TOKEN=pul-e896da50a6738640766db1c786b348fe5552ec36
-    - export aws_access_key_id="$AWS_ACCESS_KEY"
+    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
+    - export aws_access_key_id="$AWS_ACCESS_KEY_ID"
     - export aws_secret_access_key="$AWS_SECRET_ACCESS_KEY"
     - export aws_default_region="$AWS_DEFAULT_REGION"
     - pulumi stack select dev
