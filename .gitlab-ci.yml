@@ -18,20 +18,9 @@ backend- static-security-integration-test:
   stage: integration-test
   image: docker
   script:
-    - docker run -it -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
+    - docker run  -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
 
 
-frontend-static-security-integration-test:
-  stage: integration-test
-  image: ubuntu
-  before_script:
-    - cd frontend
-    - chmod +x ./scripts/*.sh
-    - ./scripts/npm-install.sh
-  script:
-    - npm install
-    - npm run auth 
-    - npm run snyk 
     
 
 backend-generate-code-coverage:
