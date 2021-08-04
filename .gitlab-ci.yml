@@ -69,6 +69,8 @@ provide-infrastructure:
     - export aws_access_key_id="$AWS_ACCESS_KEY_ID"
     - export aws_secret_access_key="$AWS_SECRET_ACCESS_KEY"
     - export aws_default_region="$AWS_DEFAULT_REGION"
+    - printenv
+    - pulumi login
     - pulumi stack select dev
     - pulumi up -y
     - cd ..
