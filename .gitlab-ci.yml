@@ -14,15 +14,6 @@ backend-integration-test:
   script:
     - ./gradlew chec
 
-backend- static-security-integration-test:
-  stage: integration-test
-  image: docker
-  script:
-    - docker run  -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
-
-
-    
-
 backend-generate-code-coverage:
   stage: integration-test
   script:
