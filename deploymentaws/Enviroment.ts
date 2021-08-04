@@ -6,6 +6,7 @@ export const enviroment = new aws.elasticbeanstalk.Environment("enviroment", {
     application: application,
     solutionStackName: "64bit Amazon Linux 2 v3.2.4 running Corretto 11",
     name: "dev-app",
+    cnamePrefix: "dev-app",
     version: applicationVersion,
     settings: [
         {
