@@ -1,0 +1,45 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'  
+}
+
+
+repositories {    
+    jcenter()
+   }
+
+dependencies {
+    testImplementation 'io.cucumber:cucumber-java:6.8.1'
+    testImplementation 'io.cucumber:cucumber-junit:6.8.1'
+    testImplementation 'io.rest-assured:rest-assured:4.3.3'
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+}
+
+
+test {
+    // Use junit platform for unit tests
+    useJUnitPlatform()
+}
+
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    group = 'cucumber'
+    description = 'execute acceptance test in a dev enviroment'
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin','pretty', '--glue', 'org.steinko.helloworld', 'src/test/resources']
+        }
+    }
+}
