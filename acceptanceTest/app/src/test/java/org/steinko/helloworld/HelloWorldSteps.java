@@ -23,7 +23,7 @@ public class HelloWorldSteps {
 	@Then("{string} is displayed")
 	public void is_displayed(String string) {
 		
-        String uri="http://" + IpAdressFile.getIpAdress();
+        String uri="http://dev-app.eba-cipadpan.eu-north-1.elasticbeanstalk.com/helloworld";
 		RestAssured.baseURI = uri;	
 		 given().
 	      when().

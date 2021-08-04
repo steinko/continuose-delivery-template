@@ -9,10 +9,17 @@ stages:
   - acceptance-test
   - destroy-infrastructure
 
-integration-test:
+backend-integration-test:
   stage: integration-test
   script:
-    - ./gradlew check
+    - ./gradlew chec
+
+backend- static-security-integration-test:
+  stage: integration-test
+  image: docker
+  script:
+    - docker run -it -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
+
 
 frontend-static-security-integration-test:
   stage: integration-test
@@ -23,7 +30,8 @@ frontend-static-security-integration-test:
     - ./scripts/npm-install.sh
   script:
     - npm install
-    - npm run auth //- npm run snyk 
+    - npm run auth 
+    - npm run snyk 
     
 
 backend-generate-code-coverage:
@@ -140,13 +148,13 @@ frontend-build-image:
 
 
 provide-infrastructure:
-   image: ubuntu
+   image: pulumi/pulumi-nodejs
+   
    stage: provide-infrastructure
-   before_script:
-    - chmod +x ./infAsCode/scripts/*.sh
-    - ./infAsCode/scripts/setup.sh
    script:
-    - ./infAsCode/scripts/run-pulumi.sh
+    - cd deploymentaws
+    - npm install
+    - pulumi up
 
 deployment-test:
   stage: deployment-test

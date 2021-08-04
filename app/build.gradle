@@ -24,6 +24,11 @@ dependencies {
 	
 }
 
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
 jacoco {
     toolVersion = "0.8.6"
     reportsDir = file("$buildDir/customJacocoReportDir")
