@@ -8,13 +8,7 @@ stages:
   - acceptance-test
   - destroy-infrastructure
 
-backend- static-security-integration-test:
-  stage: integration-test
-  image: docker:19.03.12
-  script:
-    - docker run  -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
-
-
+ 
 backend-integration-test:
   stage: integration-test
   script:
@@ -37,11 +31,9 @@ backend-check-code-quality:
 
 frontend-integration-test:
   stage: integration-test
-  image: ubuntu
+  image: node
   before_script:
     - cd frontend
-    - chmod +x ./scripts/*.sh
-    - ./scripts/npm-install.sh
   script:
     - npm install
     - npm run test -- --coverage --watchAll=false
@@ -49,11 +41,9 @@ frontend-integration-test:
 
 frontend-lint:
   stage: integration-test
-  image: ubuntu
+  image: node
   before_script:
     - cd frontend
-    - chmod +x ./scripts/*.sh
-    - ./scripts/npm-install.sh
   script:
     - npm install
     - npm run lint
