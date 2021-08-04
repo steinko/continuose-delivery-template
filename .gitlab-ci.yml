@@ -9,6 +9,13 @@ stages:
   - acceptance-test
   - destroy-infrastructure
 
+backend- static-security-integration-test:
+  stage: integration-test
+  image: docker:19.03.12
+  script:
+    - docker run -it -e "SNYK_TOKEN=f57069f4-5360-4d3a-9d49-27f86c695d48" snyk/snyk-cli:gradle-5.4 test 
+
+
 backend-integration-test:
   stage: integration-test
   script:
@@ -62,71 +69,7 @@ backend-assemble-artefact:
       - ./app/build/libs/app.jar 
 
 
-backend-build-image:
-   image: ubuntu
-   stage: build-image
-   script:
-     - apt update -y
-     - apt upgrade -y
-     - apt install apt-transport-https  ca-certificates curl gnupg lsb-release -y
-     - apt install curl -y
-     - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-     - echo  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" |  tee /etc/apt/sources.list.d/docker.list > /dev/null
-     - apt update -y
-     - export tzdata=Europe/OSLO
-     - export DEBIAN_FRONTEND=noninteractive
-     - ln -snf /usr/share/zoneinfo/$tzdata /etc/localtime && echo $tzdata > /etc/timezone
-     - apt update -y
-     - apt install docker-ce docker-ce-cli containerd.io -y tzdata
-     - apt update -y
-     - service docker start
-     - service docker restart
-     - service docker status
-     - docker run hello-world
-     - export DOCKER_CLI_EXPERIMENTAL=enabled
-     - docker buildx install
-     - docker run --privileged --rm tonistiigi/binfmt --install all 
-     - docker context create node-amd64  --from default
-     - docker context create node-arm64  --from default
-     - docker buildx create --use --name mybuild node-amd64 
-     - docker buildx create --append --name mybuild node-arm64
-     - docker login -u steinko -p RoxyMusic11
-     - docker buildx build --platform linux/amd64 --push -t steinko/helloworld-backend .
    
-frontend-build-image:
-   image: ubuntu
-   stage: build-image
-   script:
-     - apt update -y
-     - apt upgrade -y
-     - apt install apt-transport-https  ca-certificates curl gnupg lsb-release -y
-     - apt install curl -y
-     - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-     - echo  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" |  tee /etc/apt/sources.list.d/docker.list > /dev/null
-     - apt update -y
-     - export tzdata=Europe/OSLO
-     - export DEBIAN_FRONTEND=noninteractive
-     - ln -snf /usr/share/zoneinfo/$tzdata /etc/localtime && echo $tzdata > /etc/timezone
-     - apt update -y
-     - apt install docker-ce docker-ce-cli containerd.io -y tzdata
-     - apt update -y
-     - service docker start
-     - service docker restart
-     - service docker status
-     - cd frontend
-     - docker run hello-world
-     - export DOCKER_CLI_EXPERIMENTAL=enabled
-     - docker buildx install
-     - docker run --privileged --rm tonistiigi/binfmt --install all 
-     - docker context create node-amd64  --from default
-     - docker context create node-arm64  --from default
-     - docker buildx create --use --name mybuild node-amd64 
-     - docker buildx create --append --name mybuild node-arm64
-     - docker login -u steinko -p RoxyMusic11
-     - docker buildx build --platform linux/amd64 --push -t steinko/helloworld-frontend .
-   
-
-
 provide-infrastructure:
    image: pulumi/pulumi-nodejs
    
