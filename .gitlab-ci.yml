@@ -2,35 +2,34 @@ default:
   image: openjdk:15
  
 stages:
-  - integration-test
-  - provide-infrastructure
-  - deployment-test
+  - continuose-intgeration
+  - infrastructure-provision
   - acceptance-test
-  - destroy-infrastructure
+  - infrastructure-destruction
 
  
 backend-integration-test:
-  stage: integration-test
+  stage: continuose-integration
   script:
     - ./gradlew chec
 
 backend-generate-code-coverage:
-  stage: integration-test
+  stage: continuose-integration
   script:
     - ./gradlew jacocoTestReport
 
 backend-generate-java-doc:
-  stage: integration-test
+  stage: continuose-integration
   script:
     - ./gradlew javadoc
 
 backend-check-code-quality:
-  stage: integration-test
+  stage: continuose-integration
   script:
     - ./gradlew sonarqube
 
 frontend-integration-test:
-  stage: integration-test
+  stage: continuose-integration
   image: node
   before_script:
     - cd frontend
@@ -40,7 +39,7 @@ frontend-integration-test:
     - cd ..
 
 frontend-lint:
-  stage: integration-test
+  stage: continuose-intgeration
   image: node
   before_script:
     - cd frontend
@@ -50,7 +49,7 @@ frontend-lint:
     - cd ..
 
 backend-assemble-artefact:
-  stage: integration-test
+  stage: continuose-integrationt
   script:
     - ./gradlew assemble
   artifacts:
@@ -62,7 +61,7 @@ backend-assemble-artefact:
 provide-infrastructure:
    image: pulumi/pulumi-nodejs
    
-   stage: provide-infrastructure
+   stage: infrastructure-provision
    script:
     - cd deploymentaws
     - npm install
@@ -82,7 +81,7 @@ acceptance-test:
   
 destroy-infrastructure:
    image: pulumi/pulumi-nodejs
-   stage: destroy-infrastructure
+   stage: infrastructure-destruction
    script:
     - cd deploymentaws
     - npm install
