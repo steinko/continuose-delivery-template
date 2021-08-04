@@ -66,6 +66,7 @@ provide-infrastructure:
     - cd deploymentaws
     - npm install
     - export PULUMI_ACCESS_TOKEN=pul-e896da50a6738640766db1c786b348fe5552ec36
+    - pulumi stack select dev
     - pulumi up -y
     - cd ..
 
