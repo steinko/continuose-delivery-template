@@ -74,6 +74,10 @@ provide-infrastructure:
     - pulumi stack select dev
     - pulumi up -y
     - cd ..
+   environment:
+    name: staging
+    url: http://dev-app.eu-north-1.elasticbeanstalk.com
+
 
 
 acceptance-test:
