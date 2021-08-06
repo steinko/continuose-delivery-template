@@ -93,7 +93,7 @@ preformence_acceptance-test:
   image: blazemeter/taurus
   stage: acceptance-test
   script:
-    - docker run -it --rm -v ./performancetests:/bzt-configs blazemeter/taurus basicscenario.yml
+    - docker run -it --rm -v /performancetests:/bzt-configs blazemeter/taurus bzt basicscenario.yml
     
 
 
