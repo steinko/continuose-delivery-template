@@ -1,0 +1,91 @@
+2021-08-06 13:57:43,787 INFO o.a.j.u.JMeterUtils: Setting Locale to en_NO
+2021-08-06 13:57:43,812 INFO o.a.j.JMeter: Loading user properties from: /Users/steinko/.bzt/jmeter-taurus/5.2.1/bin/user.properties
+2021-08-06 13:57:43,813 INFO o.a.j.JMeter: Loading system properties from: /Users/steinko/.bzt/jmeter-taurus/5.2.1/bin/system.properties
+2021-08-06 13:57:43,814 INFO o.a.j.JMeter: Loading additional properties from: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516/jmeter-bzt.properties
+2021-08-06 13:57:43,815 INFO o.a.j.JMeter: Setting System properties from file: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516/system.properties
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: Copyright (c) 1998-2019 The Apache Software Foundation
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: Version 5.2.1
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: java.version=15.0.1
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: os.name=Mac OS X
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: os.arch=x86_64
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: os.version=10.16
+2021-08-06 13:57:43,817 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-08-06 13:57:43,818 INFO o.a.j.JMeter: java.awt.headless=true
+2021-08-06 13:57:43,818 INFO o.a.j.JMeter: Max memory     =4294967296
+2021-08-06 13:57:43,818 INFO o.a.j.JMeter: Available Processors =8
+2021-08-06 13:57:43,824 INFO o.a.j.JMeter: Default Locale=English (Norway)
+2021-08-06 13:57:43,824 INFO o.a.j.JMeter: JMeter  Locale=English (Norway)
+2021-08-06 13:57:43,824 INFO o.a.j.JMeter: JMeterHome=/Users/steinko/.bzt/jmeter-taurus/5.2.1
+2021-08-06 13:57:43,824 INFO o.a.j.JMeter: user.dir  =/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests
+2021-08-06 13:57:43,824 INFO o.a.j.JMeter: PWD       =/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests
+2021-08-06 13:57:43,826 INFO o.a.j.JMeter: IP: 10.0.0.127 Name: Steins-MacBook-Pro.local FullName: 10.0.0.127
+2021-08-06 13:57:43,826 INFO o.a.j.JMeter: user.classpath=/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516:/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516
+2021-08-06 13:57:43,827 INFO o.a.j.JMeter: Adding to classpath and loader: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516
+2021-08-06 13:57:43,829 INFO o.a.j.JMeter: Adding to classpath and loader: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516
+2021-08-06 13:57:43,839 INFO o.a.j.s.FileServer: Default base='/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests'
+2021-08-06 13:57:43,843 INFO o.a.j.s.FileServer: Set new base='/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516'
+2021-08-06 13:57:44,089 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-08-06 13:57:44,109 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2021-08-06 13:57:44,113 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-08-06 13:57:44,118 INFO o.a.j.s.SaveService: Loading file: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_13-57-23.100516/modified_requests.jmx
+2021-08-06 13:57:44,153 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2021-08-06 13:57:44,155 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2021-08-06 13:57:44,164 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-08-06 13:57:44,164 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-08-06 13:57:44,164 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-08-06 13:57:44,165 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-08-06 13:57:44,165 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2021-08-06 13:57:44,165 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2021-08-06 13:57:44,205 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-08-06 13:57:44,207 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-08-06 13:57:44,207 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-08-06 13:57:44,216 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2021-08-06 13:57:44,216 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2021-08-06 13:57:44,348 INFO o.a.j.JMeter: Running test (1628251064348)
+2021-08-06 13:57:44,371 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : BasicScenario
+2021-08-06 13:57:44,373 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group BasicScenario.
+2021-08-06 13:57:44,373 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2021-08-06 13:57:44,393 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2021-08-06 13:57:44,393 INFO c.b.j.t.c.ConcurrencyThreadStarter: Start supplying threads
+2021-08-06 13:57:46,439 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2021-08-06 13:57:46,440 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2021-08-06 13:57:46,438 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-1
+2021-08-06 13:57:46,440 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2021-08-06 13:57:46,440 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2021-08-06 13:57:46,491 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = Steins-MacBook-Pro.local
+2021-08-06 13:57:46,498 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2021-08-06 13:57:46,685 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2021-08-06 13:57:46,685 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2021-08-06 13:57:50,471 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-2
+2021-08-06 13:57:54,501 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-3
+2021-08-06 13:57:58,528 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-4
+2021-08-06 13:58:02,569 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-5
+2021-08-06 13:58:06,620 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-6
+2021-08-06 13:58:10,657 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-7
+2021-08-06 13:58:14,698 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-8
+2021-08-06 13:58:18,741 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-9
+2021-08-06 13:58:22,765 INFO o.a.j.t.JMeterThread: Thread started: BasicScenario-ThreadStarter 1-10
+2021-08-06 14:00:24,413 INFO c.b.j.t.c.ConcurrencyThreadStarter: Done supplying threads
+2021-08-06 14:00:25,385 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-8
+2021-08-06 14:00:25,385 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-8
+2021-08-06 14:00:27,469 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-3
+2021-08-06 14:00:27,471 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-3
+2021-08-06 14:00:28,374 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-7
+2021-08-06 14:00:28,374 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-9
+2021-08-06 14:00:28,374 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-6
+2021-08-06 14:00:28,380 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-7
+2021-08-06 14:00:28,380 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-9
+2021-08-06 14:00:28,380 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-6
+2021-08-06 14:00:29,361 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-4
+2021-08-06 14:00:29,362 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-4
+2021-08-06 14:00:32,411 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-10
+2021-08-06 14:00:32,411 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-10
+2021-08-06 14:00:40,491 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-1
+2021-08-06 14:00:40,492 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-1
+2021-08-06 14:00:41,489 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-2
+2021-08-06 14:00:41,489 INFO o.a.j.t.JMeterThread: Thread is done: BasicScenario-ThreadStarter 1-5
+2021-08-06 14:00:41,489 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-2
+2021-08-06 14:00:41,489 INFO o.a.j.t.JMeterThread: Thread finished: BasicScenario-ThreadStarter 1-5
+2021-08-06 14:00:41,490 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-08-06 14:00:41,496 INFO o.a.j.e.StandardJMeterEngine: Forced JVM shutdown requested at end of test
