@@ -80,7 +80,7 @@ provide-infrastructure:
 
 
 
-acceptance-test:
+functional_acceptance-test:
   image: gradle
   stage: acceptance-test
   
@@ -88,6 +88,14 @@ acceptance-test:
     - cd ./acceptanceTest
     - gradle cucumber
     - cd ..
+
+preformence_acceptance-test:
+  image: blazemeter/taurus
+  stage: acceptance-test
+  script:
+    - docker run -it --rm -v ./performancetests:/bzt-configs blazemeter/taurus basicscenario.yml
+    
+
 
   
 destroy-infrastructure:
