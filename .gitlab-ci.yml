@@ -90,11 +90,13 @@ functional_acceptance-test:
     - cd ..
 
 preformence_acceptance-test:
-  image: blazemeter/taurus
   stage: acceptance-test
+  image: 
+    name: blazemeter/taurus
+    entrypoint: [""]
   script:
-    - docker run -it --rm -v /performancetests:/bzt-configs blazemeter/taurus *.yml
-    
+    - "bzt performanctest/*.yml"
+
 
 
   
