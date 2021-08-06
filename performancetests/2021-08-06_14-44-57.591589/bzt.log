@@ -1,0 +1,68 @@
+[2021-08-06 14:44:57,555 INFO root] Taurus CLI Tool v1.15.2
+[2021-08-06 14:44:57,556 DEBUG root] Build: 14035 Thu Jan 21 10:28:57 UTC 2021
+[2021-08-06 14:44:57,556 DEBUG root] Extended git info:  067490eb Release 1.15.2
+[2021-08-06 14:44:57,556 DEBUG root] Command-line options: {'log': '/var/folders/qh/z5z9yt094z15xrvj557gpgrr0000gn/T/bzt_m0jekmqt.log', 'option': None, 'quiet': None, 'verbose': None, 'no_system_configs': None, 'aliases': []}
+[2021-08-06 14:44:57,557 DEBUG root] Python: CPython 3.9.6
+[2021-08-06 14:44:57,557 DEBUG root] OS: uname_result(system='Darwin', node='Steins-MacBook-Pro.local', release='20.6.0', version='Darwin Kernel Version 20.6.0: Wed Jun 23 00:26:27 PDT 2021; root:xnu-7195.141.2~5/RELEASE_ARM64_T8101', machine='x86_64')
+[2021-08-06 14:44:57,557 DEBUG root] Path to interpreter: /usr/local/Cellar/bzt/1.15.2/libexec/bin/python3.9
+[2021-08-06 14:44:57,557 DEBUG root] Path to packages: ['/usr/local/Cellar/bzt/1.15.2/libexec/bin', '/usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9/lib/python39.zip', '/usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9/lib/python3.9', '/usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload', '/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages', '/usr/local/opt/numpy/lib/python3.9/site-packages']
+[2021-08-06 14:44:57,558 DEBUG root] Default python: /usr/bin/python
+[2021-08-06 14:44:57,558 DEBUG root] Default python3: /Library/Frameworks/Python.framework/Versions/3.9/bin/python3
+[2021-08-06 14:44:57,558 INFO root] Starting with configs: []
+[2021-08-06 14:44:57,558 DEBUG root] Using personal config: /Users/steinko/.bzt-rc
+[2021-08-06 14:44:57,558 INFO Engine] Configuring...
+[2021-08-06 14:44:57,574 DEBUG Engine] Base configs list: ['/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/resources/10-base-config.yml']
+[2021-08-06 14:44:57,574 DEBUG Engine.Configuration] Configs: ['/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/resources/10-base-config.yml']
+[2021-08-06 14:44:57,574 DEBUG Engine.Configuration] Reading /usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/resources/10-base-config.yml as YAML
+[2021-08-06 14:44:57,586 DEBUG Engine] User configs list: ['/Users/steinko/.bzt-rc']
+[2021-08-06 14:44:57,586 DEBUG Engine.Configuration] Configs: ['/Users/steinko/.bzt-rc']
+[2021-08-06 14:44:57,587 DEBUG Engine.Configuration] Reading /Users/steinko/.bzt-rc as YAML
+[2021-08-06 14:44:57,589 DEBUG Engine.Configuration] Configs: ['/Users/steinko/.bzt-rc']
+[2021-08-06 14:44:57,589 DEBUG Engine.Configuration] Reading /Users/steinko/.bzt-rc as YAML
+[2021-08-06 14:44:57,591 DEBUG Engine] Requesting updates info: https://gettaurus.org/updates/?version=1.15.2&installID=macos-1e00621a0881
+[2021-08-06 14:44:57,591 DEBUG HTTPClient] Making HTTP request GET https://gettaurus.org/updates/?version=1.15.2&installID=macos-1e00621a0881
+[2021-08-06 14:44:57,591 INFO Engine] Artifacts dir: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589
+[2021-08-06 14:44:57,592 DEBUG Engine] New artifact filename: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/effective
+[2021-08-06 14:44:57,592 DEBUG Engine.Configuration] Dumping YAML config into /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/effective.yml
+[2021-08-06 14:44:57,601 DEBUG Engine.Configuration] Dumping JSON config into /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/effective.json
+[2021-08-06 14:44:57,602 DEBUG Engine] Set PYTHONPATH to :
+	USER: '/Users/steinko/.bzt/python-packages/3.9.6' +
+	TEMP: '/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/python-packages/3.9.6' +
+	CURRENT: ''
+[2021-08-06 14:44:57,602 DEBUG Engine] Content of user packages dir: []
+[2021-08-06 14:44:57,602 DEBUG Engine] OS env: OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+[2021-08-06 14:44:57,602 DEBUG Engine] OS env: TAURUS_ARTIFACTS_DIR=/Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589
+[2021-08-06 14:44:57,602 DEBUG root] Closing log handler: /var/folders/qh/z5z9yt094z15xrvj557gpgrr0000gn/T/bzt_m0jekmqt.log
+[2021-08-06 14:44:57,603 DEBUG root] Switched writing logs to /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/bzt.log
+[2021-08-06 14:44:57,603 DEBUG root] Linting config
+[2021-08-06 14:44:57,603 INFO Engine] Preparing...
+[2021-08-06 14:44:57,604 DEBUG Engine] Module config: consolidator {'class': 'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2021-08-06 14:44:57,604 DEBUG root] Importing module: bzt.modules.aggregator
+[2021-08-06 14:44:57,659 DEBUG urllib3.connectionpool] Starting new HTTPS connection (1): gettaurus.org:443
+[2021-08-06 14:44:57,753 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from '/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/modules/aggregator.py'>
+[2021-08-06 14:44:57,753 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2021-08-06 14:44:57,753 DEBUG Engine] Module config: monitoring {'class': 'bzt.modules.monitoring.Monitoring'}
+[2021-08-06 14:44:57,753 DEBUG root] Importing module: bzt.modules.monitoring
+[2021-08-06 14:44:57,754 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from '/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/modules/monitoring.py'>
+[2021-08-06 14:44:57,754 DEBUG Engine] Module config: local {'class': 'bzt.modules.provisioning.Local'}
+[2021-08-06 14:44:57,754 DEBUG root] Importing module: bzt.modules.provisioning
+[2021-08-06 14:44:57,754 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from '/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/modules/provisioning.py'>
+[2021-08-06 14:44:57,754 ERROR root] Config Error: No 'execution' is configured. Did you forget to pass config files?
+[2021-08-06 14:44:57,755 DEBUG root] TaurusConfigError: No 'execution' is configured. Did you forget to pass config files?
+  File "/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/cli.py", line 272, in perform
+    self.engine.prepare()
+  File "/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/engine/engine.py", line 217, in prepare
+    self.__prepare_provisioning()
+  File "/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/engine/engine.py", line 620, in __prepare_provisioning
+    self.provisioning.prepare()
+  File "/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/modules/provisioning.py", line 69, in prepare
+    super(Local, self).prepare()
+  File "/usr/local/Cellar/bzt/1.15.2/libexec/lib/python3.9/site-packages/bzt/engine/modules.py", line 128, in prepare
+    raise exc
+[2021-08-06 14:44:57,755 INFO Engine] Post-processing...
+[2021-08-06 14:44:57,755 DEBUG Engine.consolidator] Consolidator buffer[0]: dict_keys([])
+[2021-08-06 14:44:57,756 DEBUG Engine.Configuration] Dumping YAML config into /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/effective.yml
+[2021-08-06 14:44:57,764 DEBUG Engine.Configuration] Dumping JSON config into /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/effective.json
+[2021-08-06 14:44:57,764 INFO root] Artifacts dir: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589
+[2021-08-06 14:44:57,765 WARNING root] Done performing with code: 1
+[2021-08-06 14:44:57,765 DEBUG root] Closing log handler: /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-06_14-44-57.591589/bzt.log
