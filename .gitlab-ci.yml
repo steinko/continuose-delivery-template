@@ -95,7 +95,8 @@ preformence_acceptance-test:
     name: blazemeter/taurus
     entrypoint: [""]
   script:
-    - "bzt performanctest/*.yml"
+    - cd performancetests
+    - "bzt *.yml"
 
 
 
