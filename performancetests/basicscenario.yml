@@ -1,6 +1,6 @@
 ---
 execution:
-- concurrency: 1000
+- concurrency: 10000
   hold-for: 2m
   ramp-up: 40s
   scenario: BasicScenario
