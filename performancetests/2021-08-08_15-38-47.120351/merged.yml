@@ -1,0 +1,18 @@
+---
+execution:
+- concurrency: 10000
+  hold-for: 2m
+  ramp-up: 40s
+  scenario: BasicScenario
+modules:
+  blazemeter:
+    token: '********'
+reporting:
+- final-stats
+- console
+- blazemeter
+scenarios:
+  BasicScenario:
+    requests:
+    - http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld
+

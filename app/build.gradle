@@ -14,6 +14,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security:2.4.5'
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.4.5'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.4.5'
+    implementation  'org.springframework.boot:spring-boot-starter-data-jpa:2.4.2'
+    implementation 'org.postgresql:postgresql:42.2.16'
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
     
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.4.5') 

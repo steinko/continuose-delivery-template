@@ -1,0 +1,10 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /app/log/*.log
+      type: log
+
+output:
+  elasticsearch:
+    hosts: ["https://i-o-optimized-deployment-912238.es.us-west1.gcp.cloud.es.io:9243"]

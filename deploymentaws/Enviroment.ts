@@ -13,6 +13,18 @@ export const enviroment = new aws.elasticbeanstalk.Environment("enviroment", {
             namespace: "aws:autoscaling:launchconfiguration",
             name: "IamInstanceProfile",
             value: "aws-elasticbeanstalk-ec2-role",
+        },
+       {
+            namespace: "aws:elasticbeanstalk:cloudwatch:logs",
+            name: "StreamLogs",
+            value: "True",
+        },
+        {
+            namespace: "aws:elasticbeanstalk:cloudwatch:logs:health",
+            name: "HealthStreamingEnabled",
+            value: "True",
         }
+
+
      ]
 })

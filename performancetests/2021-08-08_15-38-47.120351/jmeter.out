@@ -1,0 +1,4 @@
+Created the tree successfully using /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-08_15-38-47.120351/modified_requests.jmx
+Starting standalone test @ Sun Aug 08 15:39:12 CEST 2021 (1628429952364)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+[25.223s][warning][os,thread] Failed to start thread - pthread_create failed (EAGAIN) for attributes: stacksize: 1024k, guardsize: 4k, detached.

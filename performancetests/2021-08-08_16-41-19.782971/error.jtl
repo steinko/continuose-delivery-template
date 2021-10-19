@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="228573" lt="0" ts="1628433713625" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-23" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228574" lt="0" ts="1628433713620" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-8" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228574" lt="0" ts="1628433713620" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-4" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228574" lt="0" ts="1628433713620" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-16" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228586" lt="0" ts="1628433713601" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-11" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228573" lt="0" ts="1628433713639" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-22" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228580" lt="0" ts="1628433713607" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-9" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228576" lt="0" ts="1628433713622" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-20" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228573" lt="0" ts="1628433713620" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-18" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228588" lt="0" ts="1628433713599" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-10" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228587" lt="0" ts="1628433713599" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-13" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228574" lt="0" ts="1628433713620" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-24" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228587" lt="0" ts="1628433713600" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-6" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228575" lt="0" ts="1628433713615" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-12" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228575" lt="0" ts="1628433713615" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-25" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228575" lt="0" ts="1628433713615" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-1" dt="text" de="" by="2729" ng="85" na="85">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228564" lt="0" ts="1628433722610" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-47" dt="text" de="" by="2729" ng="5" na="5">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228562" lt="0" ts="1628433722612" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-48" dt="text" de="" by="2729" ng="5" na="5">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+<httpSample t="228564" lt="0" ts="1628433722610" s="false" lb="http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld" rc="Non HTTP response code: org.apache.http.conn.HttpHostConnectException" rm="Non HTTP response message: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out" tn="BasicScenario-ThreadStarter 1-49" dt="text" de="" by="2729" ng="5" na="5">
+  <assertionResult>
+    <name>Timeout Check</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+Host: dev-app.eu-north-1.elasticbeanstalk.com
+User-Agent: Apache-HttpClient/4.5.10 (Java/15.0.1)
+</requestHeader>
+  <responseData class="java.lang.String">org.apache.http.conn.HttpHostConnectException: Connect to dev-app.eu-north-1.elasticbeanstalk.com:80 [dev-app.eu-north-1.elasticbeanstalk.com/13.49.239.93, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.186, dev-app.eu-north-1.elasticbeanstalk.com/16.170.116.126] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl$JMeterDefaultHttpClientConnectionOperator.connect(HTTPHC4Impl.java:326)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:374)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:850)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:561)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:67)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1282)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1271)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:627)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:551)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:490)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:574)
+	at java.base/sun.nio.ch.Net.connect(Net.java:563)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 19 more
+</responseData>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld</java.net.URL>
+</httpSample>
+
+</testResults>

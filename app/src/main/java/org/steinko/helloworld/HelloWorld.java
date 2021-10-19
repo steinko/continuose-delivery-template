@@ -1,19 +1,30 @@
-/**
- * Hello World Controller.
- */
 package org.steinko.helloworld;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
-@RestController
+
+/**
+ * Hello World Entity.
+ */
+@Entity
 public class HelloWorld {
+	
 	/**
-	 * get message.
-	 * @return Hello World
+	 * Id for hello world.
 	 */
-	@GetMapping("/helloworld")
-	public String getMessage() {
-		return "Hello World";
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	/**
+	 * Creation of HelloWorld.
+	 * @param message message.
+	 */
+	public HelloWorld(String message) { 
+		
 	}
+	
 }

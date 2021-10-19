@@ -16,3 +16,4 @@ acceptanceTest/externalIpAdress.txt
 externalIpAdress.txt
 frontend/package-lock.json
 infAsCode/externalIpAdress.txt
+/bin/
