@@ -1,5 +1,0 @@
-Created the tree successfully using /Users/steinko/development/gitlabtraining/ci-cd-template/performancetests/2021-08-08_16-41-19.782971/modified_requests.jmx
-Starting standalone test @ Sun Aug 08 16:41:42 CEST 2021 (1628433702881)
-Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4447
-Tidying up ...    @ Sun Aug 08 16:45:54 CEST 2021 (1628433954216)
-... end of run

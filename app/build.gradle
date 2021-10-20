@@ -10,6 +10,20 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+	intTest {
+	    compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+	}
+	
+}
+
+configurations {
+	intTestImplementation.extendsFrom implementation
+	intTestRuntimeOnly.extendsFrom runtimeOnly
+	
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security:2.4.5'
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.4.5'
@@ -23,6 +37,12 @@ dependencies {
 	testImplementation  'io.rest-assured:rest-assured-common:4.3.1'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    
+    intTestImplementation('org.springframework.boot:spring-boot-starter-test:2.4.5') 
+	intTestImplementation 'io.rest-assured:spring-mock-mvc:4.3.0'
+	intTestImplementation  'io.rest-assured:rest-assured-common:4.3.1'
+	intTestImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    intTestRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 	
 }
 
@@ -71,3 +91,14 @@ sonarqube {
         property "sonar.projectKey", "gradle-ci-cd"
     }
   } 
+  
+  tasks.register('integrationTest', Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.intTest.output.classesDirs
+    classpath = sourceSets.intTest.runtimeClasspath
+    shouldRunAfter test
+}
+
+check.dependsOn integrationTest
