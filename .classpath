@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="app/src/main/java"/>
 	<classpathentry kind="src" path="app/src/test/java"/>
 	<classpathentry kind="src" path="app/src/main/resources"/>
+	<classpathentry kind="src" path="app/src/intTest"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
