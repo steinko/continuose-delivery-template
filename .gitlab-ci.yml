@@ -63,12 +63,9 @@ provide-infrastructure:
    
    stage: infrastructure-provision
    script:
-    - cd deploymentaws
+    - cd depployment
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
-    - export aws_access_key_id="$AWS_ACCESS_KEY_ID"
-    - export aws_secret_access_key="$AWS_SECRET_ACCESS_KEY"
-    - export aws_default_region="$AWS_DEFAULT_REGION"
     - printenv
     - pulumi login
     - pulumi stack select dev
@@ -76,8 +73,7 @@ provide-infrastructure:
     - cd ..
    environment:
     name: staging
-    url: http://dev-app.eu-north-1.elasticbeanstalk.com
-
+   
 
 
 functional_acceptance-test:
