@@ -64,6 +64,8 @@ provide-infrastructure:
    stage: infrastructure-provision
    script:
     - cd depployment
+    - git clone https://github.com/steinko/tododeployment2.git
+    - cd tododeployment2
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - printenv
