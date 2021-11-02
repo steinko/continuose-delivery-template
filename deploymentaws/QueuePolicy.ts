@@ -1,8 +1,4 @@
 import {logQueue} from "./Queue"
-import {logBucket} from "./Bucket"
-import {elkUser} from "./User"
-
-
 import * as aws from "@pulumi/aws";
 
 

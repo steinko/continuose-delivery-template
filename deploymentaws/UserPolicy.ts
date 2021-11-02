@@ -1,8 +1,8 @@
 import * as aws from "@pulumi/aws";
-import {elkUser} from "./User"
+import {awsUser} from "./User"
 
 export const userPolicy = new aws.iam.UserPolicy("user-policy", {
-    user: elkUser.name,
+    user: awsUser.name,
     policy: JSON.stringify({
                 "Version": "2012-10-17",
                 "Statement": [

@@ -57,6 +57,20 @@ backend-assemble-artefact:
     paths:
       - ./app/build/libs/app.jar 
 
+provide-infrastructure:
+   image: pulumi/pulumi-nodejs
+   
+   stage: infrastructure-provision
+   script:
+    - cd deploymentaws
+    - npm install
+    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
+    - pulumi login
+    - pulumi stack select dev
+    - pulumi up -y
+    - cd ..
+   environment:
+    name: staging
 
 deployment_test:
     image: golang
