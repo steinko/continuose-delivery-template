@@ -4,6 +4,7 @@ default:
 stages:
   - continuose-intgeration
   - infrastructure-provision
+  - deployment_test
   - acceptance-test
   - infrastructure-destruction
 
@@ -75,7 +76,14 @@ provide-infrastructure:
     - cd ..
    environment:
     name: staging
-   
+
+deployment_test:
+    image: go
+    stage: deployment_test
+    script:
+      - cd infAsCodeRunTimeTest
+      - go test
+      - cd ..
 
 
 functional_acceptance-test:
