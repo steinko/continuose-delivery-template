@@ -59,7 +59,7 @@ backend-assemble-artefact:
 
 
 deployment_test:
-    image: go
+    image: golang
     stage: deployment_test
     script:
       - cd infAsCodeRunTimeTest
