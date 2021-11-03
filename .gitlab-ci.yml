@@ -3,16 +3,19 @@ default:
  
 stages:
   - continuose-intgeration
-  - infrastructure-provision
-  - deployment_test
+  - test_infrastructure-provision
+  - test_deployment_test
   - acceptance-test
-  - infrastructure-destruction
+  - test_infrastructure-destruction
+  - production-infrastructure_provision
+  - production-deployment-test
+  - production-infrastructure-destruction
 
  
 backend-integration-test:
   stage: continuose-intgeration
   script:
-    - ./gradlew chec
+    - ./gradlew check
 
 backend-generate-code-coverage:
   stage: continuose-intgeration
@@ -57,10 +60,10 @@ backend-assemble-artefact:
     paths:
       - ./app/build/libs/app.jar 
 
-provide-infrastructure:
+provide-infrastructure-test:
    image: pulumi/pulumi-nodejs
    
-   stage: infrastructure-provision
+   stage: test-infrastructure-provision
    script:
     - cd deploymentaws
     - npm install
@@ -72,59 +75,58 @@ provide-infrastructure:
    environment:
     name: test
 
-deployment_test:
+test-deployment-test:
     image: node
-    stage: deployment_test
+    stage: test-deployment-test
     script:
       - cd infAsCodeIntTest
       - npm install
       - npm test
       - cd ..
 
-destroy-infrastructure:
+destroy-test-infrastructure:
    image: pulumi/pulumi-nodejs
-   stage: infrastructure-destruction
+   stage: test-infrastructure-destruction
    script:
     - cd deploymentaws
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select dev
+    - pulumi stack select test
     - pulumi destroy -y
     - cd ..
 
-provide-infrastructure:
+provide-infrastructure-production:
    image: pulumi/pulumi-nodejs
-   
-   stage: infrastructure-provision
+   stage: production-infrastructure-provision
    script:
     - cd deploymentaws
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select dev
+    - pulumi stack select production
     - pulumi up -y
     - cd ..
    environment:
     name: production
 
-deployment_test:
+production-deployment-test:
     image: node
-    stage: deployment_test
+    stage: deployment-test-production
     script:
       - cd infAsCodeIntTest
       - npm install
       - npm test
       - cd ..
 
-destroy-infrastructure:
+destroy-infrastructure-production:
    image: pulumi/pulumi-nodejs
-   stage: infrastructure-destruction
+   stage: production-infrastructure-destruction
    script:
     - cd deploymentaws
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select dev
+    - pulumi stack select production
     - pulumi destroy -y
     - cd ..
