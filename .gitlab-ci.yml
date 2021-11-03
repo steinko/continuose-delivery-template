@@ -112,7 +112,7 @@ provide-infrastructure-production:
 
 production-deployment-test:
     image: node
-    stage: deployment-test-production
+    stage: production-deployment-test
     script:
       - cd infAsCodeIntTest
       - npm install
