@@ -1,3 +1,0 @@
-config:
-  Gradle-Ci-CD:project: springboot22
-  Gradle-Ci-CD:zone: europe-north1-a
