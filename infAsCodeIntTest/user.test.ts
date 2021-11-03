@@ -7,7 +7,7 @@ it('should exist a user', async () => {
     const users = data.Users 
     let found = false
      users.forEach(function (user) {
-       if (user.UserName == "AwsUser") { found = true}
+       if (user.UserName == "awsUser") { found = true}
     });
     expect(found ).toBeTruthy();
 })

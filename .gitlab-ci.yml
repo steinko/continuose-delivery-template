@@ -70,7 +70,43 @@ provide-infrastructure:
     - pulumi up -y
     - cd ..
    environment:
-    name: staging
+    name: test
+
+deployment_test:
+    image: node
+    stage: deployment_test
+    script:
+      - cd infAsCodeIntTest
+      - npm install
+      - npm test
+      - cd ..
+
+destroy-infrastructure:
+   image: pulumi/pulumi-nodejs
+   stage: infrastructure-destruction
+   script:
+    - cd deploymentaws
+    - npm install
+    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
+    - pulumi login
+    - pulumi stack select dev
+    - pulumi destroy -y
+    - cd ..
+
+provide-infrastructure:
+   image: pulumi/pulumi-nodejs
+   
+   stage: infrastructure-provision
+   script:
+    - cd deploymentaws
+    - npm install
+    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
+    - pulumi login
+    - pulumi stack select dev
+    - pulumi up -y
+    - cd ..
+   environment:
+    name: production
 
 deployment_test:
     image: node

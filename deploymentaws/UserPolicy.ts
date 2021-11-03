@@ -2,6 +2,7 @@ import * as aws from "@pulumi/aws";
 import {awsUser} from "./User"
 
 export const userPolicy = new aws.iam.UserPolicy("user-policy", {
+	name: "awsUserPolicy",
     user: awsUser.name,
     policy: JSON.stringify({
                 "Version": "2012-10-17",
