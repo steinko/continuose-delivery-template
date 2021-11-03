@@ -17,3 +17,4 @@ externalIpAdress.txt
 frontend/package-lock.json
 infAsCode/externalIpAdress.txt
 /bin/
+infAsCodeIntTest/node_modules

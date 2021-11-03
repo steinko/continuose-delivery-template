@@ -73,11 +73,11 @@ provide-infrastructure:
     name: staging
 
 deployment_test:
-    image: golang
+    image: node
     stage: deployment_test
     script:
-      - cd infAsCodeRunTimeTest
-      - go test
+      - cd infAsCodeIntTest
+      - npm test
       - cd ..
 
 destroy-infrastructure:
@@ -87,8 +87,6 @@ destroy-infrastructure:
     - cd deploymentaws
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
-    - export aws_access_key_id="$AWS_ACCESS_KEY_ID"
-    - export aws_secret_access_key="$AWS_SECRET_ACCESS_KEY"
     - pulumi login
     - pulumi stack select dev
     - pulumi destroy -y

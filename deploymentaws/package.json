@@ -7,5 +7,15 @@
         "@pulumi/pulumi": "^3.0.0",
         "@pulumi/aws": "^4.0.0",
         "@pulumi/awsx": "^0.30.0"
+    },
+"scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
     }
+  }
+ 
 }
+

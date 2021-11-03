@@ -1,4 +1,4 @@
-package greetings
+package greeting
 
 import (
     "errors"
