@@ -3,11 +3,11 @@ default:
  
 stages:
   - continuose-intgeration
-  - test_infrastructure-provision
-  - test_deployment_test
+  - test-infrastructure-provision
+  - test-deployment-test
   - acceptance-test
-  - test_infrastructure-destruction
-  - production-infrastructure_provision
+  - test-infrastructure-destruction
+  - production-infrastructure-provision
   - production-deployment-test
   - production-infrastructure-destruction
 
