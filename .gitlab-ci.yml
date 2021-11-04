@@ -69,7 +69,7 @@ provide-infrastructure-test:
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select dev
+    - pulumi stack select test
     - pulumi up -y
     - cd ..
    environment:

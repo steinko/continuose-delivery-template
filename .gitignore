@@ -1,20 +1,15 @@
-# Ignore Gradle project-specific cache directory
 .gradle
-
-# Ignore Gradle build output directory
 build
 app/build
-infAsCode/node_modules
 gradle
 appEngine/node_modules
-gcp_ts_cloudrun/node_modules
-infTest/node_modules
+appEngine/package-lock.json
 acceptanceTest/app/build
 acceptanceTest/gradle
-infAsCide/package-lock.json
-acceptanceTest/externalIpAdress.txt
-externalIpAdress.txt
+frontend/node_moduls
 frontend/package-lock.json
-infAsCode/externalIpAdress.txt
 /bin/
 infAsCodeIntTest/node_modules
+infAsCodeIntTest/package-lock.json
+deploymentaws/node_modules
+deploymentaws/package-lock.json
