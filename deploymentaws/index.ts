@@ -2,6 +2,7 @@
 //import {applicationVersion} from "./ApplicationVersion"
 //import {enviroment} from "./Enviroment"
 import {buildArtefactBucket} from "./BuildArtefactBucket"
+import {buildArtefactBucketObject} from "./BuildArtefactBucketObject"
 import {userPolicy} from "./UserPolicy"
 import {user} from "./User"
 
@@ -11,3 +12,4 @@ userPolicy
 //applicationVersion
 //enviroment
 buildArtefactBucket
+buildArtefactBucketObject
