@@ -3,8 +3,8 @@ import { iamClient } from "./iamClient";
 
 it('should exist a user policy', async () => {
    const input = { "UserName": "AwsUser",
-                   "PolicyName": "awsUserPolicy" };
+                   "PolicyName": "userPolicy" };
    const command = new GetUserPolicyCommand(input);
    const response = await iamClient.send(command);
-   expect(response.PolicyName ).toBe("awsUserPolicy")
+   expect(response.PolicyName ).toBe("userPolicy")
 })

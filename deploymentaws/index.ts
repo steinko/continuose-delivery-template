@@ -1,16 +1,13 @@
-import {application} from "./Application"
-import {applicationFile} from "./ApplicationFile"
-import {applicationVersion} from "./ApplicationVersion"
-import {enviroment} from "./Enviroment"
-import {logBucket} from "./Bucket"
-import {awsUser} from "./User"
+//import {application} from "./Application"
+//import {applicationVersion} from "./ApplicationVersion"
+//import {enviroment} from "./Enviroment"
+import {buildArtefactBucket} from "./BuildArtefactBucket"
 import {userPolicy} from "./UserPolicy"
+import {user} from "./User"
 
-
-application
-applicationFile
-applicationVersion
-enviroment
-logBucket
-awsUser
+user
 userPolicy
+//application
+//applicationVersion
+//enviroment
+buildArtefactBucket
