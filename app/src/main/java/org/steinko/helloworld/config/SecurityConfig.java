@@ -13,7 +13,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
  * Security configuration for the application.
  */
 @Configuration
-public class ProjectConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * User Detail Service.
      * @return user detail service.

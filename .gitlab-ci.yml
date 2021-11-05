@@ -5,10 +5,11 @@ stages:
   - continuose-intgeration
   - test-infrastructure-provision
   - test-deployment-test
-  - acceptance-test
+  - test-acceptance-test
   - test-infrastructure-destruction
   - production-infrastructure-provision
   - production-deployment-test
+  - production-acceptance-test
   - production-infrastructure-destruction
 
  
@@ -84,6 +85,16 @@ test-deployment-test:
       - npm test
       - cd ..
 
+test-functional-acceptance-test:
+  image: gradle
+  stage: test-acceptance-test
+  
+  script:
+    - cd ./acceptanceTest
+    - gradle cucumber
+    - cd ..
+
+
 destroy-test-infrastructure:
    image: pulumi/pulumi-nodejs
    stage: test-infrastructure-destruction
@@ -118,6 +129,16 @@ production-deployment-test:
       - npm install
       - npm test
       - cd ..
+
+production-functional-acceptance-test:
+  image: gradle
+  stage: production-acceptance-test
+  
+  script:
+    - cd ./acceptanceTest
+    - gradle cucumber
+    - cd ..
+
 
 destroy-infrastructure-production:
    image: pulumi/pulumi-nodejs

@@ -1,29 +1,29 @@
-package org.steinko.helloworld;
+package java.org.steinko.helloworld;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.steinko.helloworld.config.ProjectConfig;
+import org.steinko.helloworld.config.SecurityConfig;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class ProjectConfigIT {
+public class SecurityConfigIT {
 	/**
 	 * Project configuration.
 	 */
 	@Autowired
-	private ProjectConfig projectConfig;
+	private SecurityConfig projectConfig;
 	
 	
 	/**
 	 * Project config.
 	 * @return project config
 	 */
-	public ProjectConfig getProjectConfig() {
+	public SecurityConfig getProjectConfig() {
 		return projectConfig;
 	}
 
