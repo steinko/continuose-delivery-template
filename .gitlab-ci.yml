@@ -64,7 +64,7 @@ backend-assemble-artefact:
 
 build-image:
     stage: build-image
-    image: docker
+    image: docker:dind
     script:
      - docker login -u steiko -p "$DOCKER_PASSWORD"
      - docker buildx create --name mybuilder
