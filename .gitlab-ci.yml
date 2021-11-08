@@ -3,6 +3,7 @@ default:
  
 stages:
   - continuose-intgeration
+  - bild-image
   - test-infrastructure-provision
   - test-deployment-test
   - test-acceptance-test
@@ -60,6 +61,14 @@ backend-assemble-artefact:
   artifacts:
     paths:
       - ./app/build/libs/app.jar 
+
+build-image:
+    stage: build-image
+    script:
+     - docker login -u steiko -p "$DOCKER_PASSWORD"
+     - docker buildx create --name mybuilder
+     - docker buildx use mybuilder
+     - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t steinko/helloworld . --push
 
 provide-infrastructure-test:
    image: pulumi/pulumi-nodejs

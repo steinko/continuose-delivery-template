@@ -4,8 +4,8 @@ import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3"; // ES Modules i
 it('should exist a bucket in the cloud', async () => {
       const client = new S3Client({ region: "eu-north-1" })
       const input =  { 
-	                    "Bucket": "build-artefact-bucket" ,
-                        "Key" : "app.jar"
+	                    "Bucket": "dokcerrun-file-bucket" ,
+                        "Key" : "Dockerrun.aws.json"
                      }
       const command = new GetObjectCommand(input)
       const response = await client.send(command)

@@ -4,7 +4,7 @@ import {applicationVersion} from "./ApplicationVersion"
 
 export const enviroment = new aws.elasticbeanstalk.Environment("enviroment", {
     application: application,
-    solutionStackName: "64bit Amazon Linux 2 v3.2.4 running Corretto 11",
+    solutionStackName: "64bit Amazon Linux 2 v3.4.8 running Docker",
     name: "dev-app",
     cnamePrefix: "dev-app",
     version: applicationVersion,

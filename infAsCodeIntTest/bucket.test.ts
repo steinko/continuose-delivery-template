@@ -11,7 +11,7 @@ it('should exist a bucket in the cloud', async () => {
    const buckets = await client.send(command);
     let found = false
      buckets.Buckets.forEach(function (bucket) {
-       if (bucket.Name == "build-artefact-bucket") { found = true}
+       if (bucket.Name == "dokcerrun-file-bucket") { found = true}
     });
     expect(found ).toBeTruthy();
 })

@@ -1,11 +1,11 @@
 import * as aws from "@pulumi/aws";
 import {application} from "./Application"
-import {buildArtefactBucketObject} from "./BuildArtefactBucketObject"
+import {dockerrunFileBucketObject} from "./dockerrunFileBucketObject"
 
 export const applicationVersion = new aws.elasticbeanstalk.ApplicationVersion("application-version", {
     application: application,
     description: "application version",
-    bucket: buildArtefactBucketObject.bucket,
-    key: buildArtefactBucketObject.key,
+    bucket: dockerrunFileBucketObject.bucket,
+    key: dockerrunFileBucketObject.key,
     name: "v1"
 });
