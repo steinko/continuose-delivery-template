@@ -65,8 +65,10 @@ backend-assemble-artefact:
 build-image:
     stage: build-image
     image: docker:dind
+    services:
+      - docker:dind
     script:
-     - docker login -u steiko -p "$DOCKER_PASSWORD"
+     - docker login -u steiko --password-stdin "$DOCKER_PASSWORD"
      - docker buildx create --name mybuilder
      - docker buildx use mybuilder
      - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t steinko/helloworld . --push
