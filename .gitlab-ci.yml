@@ -3,7 +3,7 @@ default:
  
 stages:
   - continuose-intgeration
-  - bild-image
+  - build-image
   - test-infrastructure-provision
   - test-deployment-test
   - test-acceptance-test
