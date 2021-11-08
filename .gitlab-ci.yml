@@ -70,7 +70,7 @@ build-image:
     script:
      - docker login -u steinko --password "$DOCKER_PASSWORD"  
      - docker build  -t steinko/helloworld .
-     - docker push
+     - docker push steinko/helloworld
 
 provide-infrastructure-test:
    image: pulumi/pulumi-nodejs
