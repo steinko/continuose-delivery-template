@@ -69,7 +69,8 @@ build-image:
       - docker:dind
     script:
      - docker login -u steinko --password "$DOCKER_PASSWORD"  
-     - docker build  -t steinko/helloworld . --push
+     - docker build  -t steinko/helloworld .
+     - docker push
 
 provide-infrastructure-test:
    image: pulumi/pulumi-nodejs
