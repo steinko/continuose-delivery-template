@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import springfox.documentation.builders.PathSelectors;
 
 /**
- * Gonfiguration of Swagger.
+ * Configuration of Swagger.
  *
  */
 @Configuration
