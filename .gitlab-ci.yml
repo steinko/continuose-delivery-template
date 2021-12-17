@@ -154,7 +154,7 @@ provide-infrastructure-production:
     - pulumi login
     - pulumi stack select production
     - pulumi up -y
-    - export BACKEND_URL= http://$(pulumi stack output url)/helloworld
+    - export BACKEND_URL=http://$(pulumi stack output url)/helloworld
     - cd ..
    environment:
     name: production
