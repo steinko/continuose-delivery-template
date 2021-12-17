@@ -131,6 +131,7 @@ test-functional-acceptance-test:
     - cd ..
 
 
+
 destroy-test-infrastructure:
    image: pulumi/pulumi-nodejs
    stage: test-infrastructure-destruction

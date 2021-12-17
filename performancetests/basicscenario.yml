@@ -8,7 +8,7 @@ execution:
 scenarios:
   BasicScenario:
     requests:
-    - http://dev-app.eu-north-1.elasticbeanstalk.com/helloworld
+    - ${BASE_DIR}
 
 reporting:
 - final-stats
