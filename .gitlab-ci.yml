@@ -109,7 +109,7 @@ provide-infrastructure-test:
    
    stage: test-infrastructure-provision
    script:
-    - cd deploytofargate
+    - cd deploytofaragte
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
@@ -126,7 +126,7 @@ test-functional-acceptance-test:
   stage: test-acceptance-test
   
   script:
-    - cd ./acceptanceTest
+    - cd acceptanceTest
     - gradle cucumber
     - cd ..
 
@@ -136,7 +136,7 @@ destroy-test-infrastructure:
    image: pulumi/pulumi-nodejs
    stage: test-infrastructure-destruction
    script:
-    - cd deploytofargate
+    - cd deploytofaragte
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
@@ -148,7 +148,7 @@ provide-infrastructure-production:
    image: pulumi/pulumi-nodejs
    stage: production-infrastructure-provision
    script:
-    - cd deploytofargate
+    - cd deploytofaragte
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
@@ -165,7 +165,7 @@ production-functional-acceptance-test:
   stage: production-acceptance-test
   
   script:
-    - cd ./acceptanceTest
+    - cd acceptanceTest
     - gradle cucumber
     - cd ..
 
@@ -174,7 +174,7 @@ destroy-infrastructure-production:
    image: pulumi/pulumi-nodejs
    stage: production-infrastructure-destruction
    script:
-    - cd deploymentaws
+    - cd deploytofaragte
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
