@@ -20,28 +20,28 @@ backend-integration-test:
   stage: continuose-intgeration
   script:
     - cd backend
-    - ./gradlew check
+    - gradle check
     - cd ..
 
 backend-generate-code-coverage:
   stage: continuose-intgeration
   script:
     - cd backend
-    - ./gradlew jacocoTestReport
+    - gradle jacocoTestReport
     - cd ..
 
 backend-generate-java-doc:
   stage: continuose-intgeration
   script:
     - cd backend
-    - ./gradlew javadoc
+    - gradle javadoc
     - cd ..
 
 backend-check-code-quality:
   stage: continuose-intgeration
   script:
     - cd backend
-    - ./gradlew sonarqube
+    - gradle sonarqube
     - cd ..
 
 frontend-integration-test:
@@ -68,7 +68,7 @@ backend-assemble-artefact:
   stage: continuose-intgeration
   script:
     - cd backend
-    - ./gradlew assemble
+    - gradle assemble
     - cd ..
   artifacts:
     paths:
