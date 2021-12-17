@@ -77,7 +77,7 @@ backend-assemble-artefact:
     - cd ..
   artifacts:
     paths:
-      - ./build/libs/backend.jar 
+      - backend/build/libs/backend.jar 
 
 build-backend-image:
     stage: build-image
