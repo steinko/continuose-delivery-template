@@ -115,7 +115,7 @@ provide-infrastructure-test:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - export BACKEND_URL= http://$(pulumi stack output url)/helloworld
+    - export BACKEND_URL=http://$(pulumi stack output url)/helloworld
     - cd ..
    environment:
     name: test
