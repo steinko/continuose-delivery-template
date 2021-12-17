@@ -18,6 +18,7 @@ stages:
  
 backend-integration-test:
   stage: continuose-intgeration
+  image: gradle:alpine
   script:
     - cd backend
     - gradle check
@@ -25,6 +26,7 @@ backend-integration-test:
 
 backend-generate-code-coverage:
   stage: continuose-intgeration
+  image: gradle:alpine
   script:
     - cd backend
     - gradle jacocoTestReport
@@ -32,6 +34,7 @@ backend-generate-code-coverage:
 
 backend-generate-java-doc:
   stage: continuose-intgeration
+  image: gradle:alpine
   script:
     - cd backend
     - gradle javadoc
@@ -39,6 +42,7 @@ backend-generate-java-doc:
 
 backend-check-code-quality:
   stage: continuose-intgeration
+  image: gradle:alpine
   script:
     - cd backend
     - gradle sonarqube
@@ -66,6 +70,7 @@ frontend-lint:
 
 backend-assemble-artefact:
   stage: continuose-intgeration
+  image: gradle:alpine
   script:
     - cd backend
     - gradle assemble
