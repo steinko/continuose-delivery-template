@@ -1,5 +1,5 @@
 FROM  adoptopenjdk/openjdk15
-COPY  build/libs/app.jar /
+COPY  ./build/libs/backend.jar ./
 ENTRYPOINT ["java"]
-CMD ["-jar", "/app.jar"]
+CMD ["-jar", "./backend.jar"]
 EXPOSE 80

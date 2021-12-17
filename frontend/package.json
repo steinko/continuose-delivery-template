@@ -10,7 +10,7 @@
     "npm": "^7.24.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.0",
     "snyk": "^1.639.0",
     "web-vitals": "^1.1.2"
   },
