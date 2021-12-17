@@ -22,12 +22,12 @@ public class HelloWorldSteps {
 
 	@Then("{string} is displayed")
 	public void is_displayed(String string) {
-	
-        String uri="http://dev-app.eu-north-1.elasticbeanstalk.com";
+	    
+        String uri= System.getenv("BACKEND_URL");
 		RestAssured.baseURI = uri;	
 		 given().
 	      when().
-	         get("/helloworld").
+	         get("/").
 	      then().
 	         statusCode(200);
 	}

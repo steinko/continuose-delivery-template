@@ -1,5 +1,0 @@
-config:
-  aws:region: eu-north-1
-  deploymentaws:application-name: helloworld-backend
-  deploymentaws:docker-run-file-name: ../app/Dockerrun.aws.json
-  deploymentaws:enviroment-name: prod-backend

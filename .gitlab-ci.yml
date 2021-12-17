@@ -1,5 +1,7 @@
 default:
   image: openjdk:15
+variables:
+  BACKEND_URL: ""  
  
 stages:
   - continuose-intgeration
@@ -17,22 +19,30 @@ stages:
 backend-integration-test:
   stage: continuose-intgeration
   script:
+    - cd backend
     - ./gradlew check
+    - cd ..
 
 backend-generate-code-coverage:
   stage: continuose-intgeration
   script:
+    - cd backend
     - ./gradlew jacocoTestReport
+    - cd ..
 
 backend-generate-java-doc:
   stage: continuose-intgeration
   script:
+    - cd backend
     - ./gradlew javadoc
+    - cd ..
 
 backend-check-code-quality:
   stage: continuose-intgeration
   script:
+    - cd backend
     - ./gradlew sonarqube
+    - cd ..
 
 frontend-integration-test:
   stage: continuose-intgeration
@@ -57,7 +67,9 @@ frontend-lint:
 backend-assemble-artefact:
   stage: continuose-intgeration
   script:
+    - cd backend
     - ./gradlew assemble
+    - cd ..
   artifacts:
     paths:
       - ./app/build/libs/app.jar 
@@ -68,9 +80,11 @@ build-backend-image:
     services:
       - docker:dind
     script:
+     - cd backend
      - docker login -u steinko --password "$DOCKER_PASSWORD"  
      - docker build  -t steinko/helloworld-backend .
      - docker push steinko/helloworld-backend
+     - cd ..
 
 build-frontend-image:
     stage: build-image
@@ -90,24 +104,17 @@ provide-infrastructure-test:
    
    stage: test-infrastructure-provision
    script:
-    - cd deploymentaws
+    - cd deploytofargate
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select test
+    - pulumi stack select dev
     - pulumi up -y
+    - export BACKEND_URL= http://$(pulumi stack output url)/helloworld
     - cd ..
    environment:
     name: test
 
-test-deployment-test:
-    image: node
-    stage: test-deployment-test
-    script:
-      - cd infAsCodeIntTest
-      - npm install
-      - npm test
-      - cd ..
 
 test-functional-acceptance-test:
   image: gradle
@@ -123,7 +130,7 @@ destroy-test-infrastructure:
    image: pulumi/pulumi-nodejs
    stage: test-infrastructure-destruction
    script:
-    - cd deploymentaws
+    - cd deploytofargate
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
@@ -135,24 +142,17 @@ provide-infrastructure-production:
    image: pulumi/pulumi-nodejs
    stage: production-infrastructure-provision
    script:
-    - cd deploymentaws
+    - cd deploytofargate
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
     - pulumi stack select production
     - pulumi up -y
+    - export BACKEND_URL= http://$(pulumi stack output url)/helloworld
     - cd ..
    environment:
     name: production
 
-production-deployment-test:
-    image: node
-    stage: production-deployment-test
-    script:
-      - cd infAsCodeIntTest
-      - npm install
-      - npm test
-      - cd ..
 
 production-functional-acceptance-test:
   image: gradle
