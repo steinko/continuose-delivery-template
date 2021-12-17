@@ -1,0 +1,3 @@
+name: deploytofargate
+runtime: nodejs
+description: Provision AWS Fargáte infrastructure

@@ -1,9 +1,6 @@
-import {application} from "./Application"
-import {applicationVersion} from "./ApplicationVersion"
-import {enviroment} from "./Enviroment"
+
+import {enviroment} from "./enviroment"
 import {dockerrunFileBucketObject} from "./dockerrunFileBucketObject"
 
-application
-applicationVersion
-enviroment
 dockerrunFileBucketObject
+enviroment

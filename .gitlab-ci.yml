@@ -62,15 +62,28 @@ backend-assemble-artefact:
     paths:
       - ./app/build/libs/app.jar 
 
-build-image:
+build-backend-image:
     stage: build-image
     image: docker:dind
     services:
       - docker:dind
     script:
      - docker login -u steinko --password "$DOCKER_PASSWORD"  
-     - docker build  -t steinko/helloworld .
-     - docker push steinko/helloworld
+     - docker build  -t steinko/helloworld-backend .
+     - docker push steinko/helloworld-backend
+
+build-frontend-image:
+    stage: build-image
+    image: docker:dind
+    services:
+      - docker:dind
+    script:
+     - cd frontend
+     - docker login -u steinko --password "$DOCKER_PASSWORD"  
+     - docker build  -t steinko/helloworld-frontend .
+     - docker push steinko/helloworld-frontend
+     - cd ..
+
 
 provide-infrastructure-test:
    image: pulumi/pulumi-nodejs

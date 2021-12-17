@@ -18,7 +18,7 @@ public class PortConfig
 	 */
 	@Override
 	    public void customize(ConfigurableWebServerFactory factory) {
-	        factory.setPort(6000);
+	        factory.setPort(80);
 	    }
 
 }

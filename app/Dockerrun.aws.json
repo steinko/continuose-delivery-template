@@ -1,0 +1,11 @@
+{ "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "steinko/helloworld-backend"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 5000,
+      "HostPort": 5000
+    }
+  ]
+}

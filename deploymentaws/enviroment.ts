@@ -1,12 +1,16 @@
 import * as aws from "@pulumi/aws";
-import {application} from "./Application"
-import {applicationVersion} from "./ApplicationVersion"
+import * as pulumi from "@pulumi/pulumi";
+import {application} from "./application"
+import {applicationVersion} from "./applicationVersion"
+
+let config = new pulumi.Config();
+let envName = config.require("enviroment-name");
 
 export const enviroment = new aws.elasticbeanstalk.Environment("enviroment", {
     application: application,
     solutionStackName: "64bit Amazon Linux 2 v3.4.8 running Docker",
-    name: "dev-app",
-    cnamePrefix: "dev-app",
+    name: envName,
+    cnamePrefix: envName,
     version: applicationVersion,
     settings: [
         {
