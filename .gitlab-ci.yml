@@ -113,14 +113,13 @@ provide-infrastructure-test:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - echo '"TEST_BACKEND_URL"=http://$(pulumi stack output url)/helloworld' >> test.env
-    - echo "$TEST_BACKEND_URL"
+    - BACKEND_URL=http://$(pulumi stack output url)/helloworld >> test.env
     - cd ..
    environment:
      name: test
    artifacts:
-     reports:
-       dotenv: test.env
+     paths:
+     - test.env
 
 
 test-functional-acceptance-test:
@@ -129,9 +128,8 @@ test-functional-acceptance-test:
   
   script:
     - cd acceptanceTest
-    - echo "$TEST_BACKEND_URL"
-    - export BACKEND_URL="$TEST_BACKEND_URL"
-    - echo "$BACKEND_URL"
+    - export << test.env
+    - echo $BACKEND_URL
     - gradle cucumber
     - cd ..
   dependencies:
