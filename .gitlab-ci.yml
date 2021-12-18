@@ -128,7 +128,9 @@ test-functional-acceptance-test:
   
   script:
     - cd acceptanceTest
+    - echo "$BACKEND_URL"
     - export BACKEND_URL="$BACKEND_URL"
+    - echo "$BACKEND_URL"
     - gradle cucumber
     - cd ..
 
