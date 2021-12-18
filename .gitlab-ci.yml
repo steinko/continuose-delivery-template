@@ -120,8 +120,8 @@ provide-infrastructure-test:
    environment:
      name: test
    artifacts:
-    reports:
-      dotenv: test.env
+     reports:
+       dotenv: test.env
 
 
 test-functional-acceptance-test:
@@ -166,12 +166,15 @@ provide-infrastructure-production:
     - cd ..
    environment:
     name: production
+   artifacts:
+     reports:
+       dotenv: production.env
+
 
 
 production-functional-acceptance-test:
   image: gradle
-  stage: production-acceptance-test
-  
+  stage: production-acceptance-test 
   script:
     - cd acceptanceTest
     - export BACKEND_URL="$PRODUCTION_BACKEND_URL"
