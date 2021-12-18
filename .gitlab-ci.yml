@@ -115,7 +115,8 @@ provide-infrastructure-test:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - "$BACKEND_URL=http://$(pulumi stack output url)/helloworld"
+    - export TEMP_BACKEND_URL=http://$(pulumi stack output url)/helloworld
+    - "$BACKEND_URL=TEMP_BACKEND_URL"
     - cd ..
    environment:
      name: production
@@ -155,7 +156,8 @@ provide-infrastructure-production:
     - pulumi login
     - pulumi stack select production
     - pulumi up -y
-    - "$BACKEND_URL=http://$(pulumi stack output url)/helloworld"
+    - export TEMP_BACKEND_URL=http://$(pulumi stack output url)/helloworld
+    - "$BACKEND_URL=$TEMP_BACKEND_URL"
     - cd ..
    environment:
     name: production
