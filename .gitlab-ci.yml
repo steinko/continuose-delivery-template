@@ -145,7 +145,7 @@ destroy-test-infrastructure:
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select test
+    - pulumi stack select dev
     - pulumi destroy -y
     - cd ..
 
@@ -157,15 +157,15 @@ provide-infrastructure-production:
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select production
+    - pulumi stack select dev
     - pulumi up -y
-    - export '"PRODUCTION_BACKEND_URL"=http://$(pulumi stack output url)/helloworld'
+    - BACKEND_URL=http://$(pulumi stack output url)/helloworld >> production.env
     - cd ..
    environment:
     name: production
    artifacts:
-     reports:
-       dotenv: production.env
+     paths:
+       - production.env
 
 
 
@@ -174,7 +174,7 @@ production-functional-acceptance-test:
   stage: production-acceptance-test 
   script:
     - cd acceptanceTest
-    - export BACKEND_URL="$PRODUCTION_BACKEND_URL"
+    - export << production.env
     - echo $BACKEND_URL
     - gradle cucumber
     - cd ..
@@ -189,6 +189,6 @@ destroy-infrastructure-production:
     - npm install
     - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
     - pulumi login
-    - pulumi stack select production
+    - pulumi stack select dev
     - pulumi destroy -y
     - cd ..
