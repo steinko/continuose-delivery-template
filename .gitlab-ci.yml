@@ -105,7 +105,6 @@ build-frontend-image:
 
 provide-infrastructure-test:
    image: pulumi/pulumi-nodejs
-   
    stage: test-infrastructure-provision
    script:
     - cd deploytofaragte
@@ -136,7 +135,7 @@ test-functional-acceptance-test:
     - gradle cucumber
     - cd ..
   dependencies:
-    - test
+    - provide-infrastructure-test
 
 
 
@@ -182,7 +181,7 @@ production-functional-acceptance-test:
     - gradle cucumber
     - cd ..
   dependencies:
-    - production
+    - provide-infrastructure-production
 
 destroy-infrastructure-production:
    image: pulumi/pulumi-nodejs
