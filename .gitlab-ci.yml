@@ -1,7 +1,6 @@
 default:
   image: openjdk:15
-variables:
-  BACKEND_URL: ""  
+
  
 stages:
   - continuose-intgeration
@@ -115,13 +114,14 @@ provide-infrastructure-test:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - export TEMP_BACKEND_URL=http://$(pulumi stack output url)/helloworld
-    - "BACKEND_URL=$TEMP_BACKEND_URL"
-    - echo "$TEMP_BACKEND_URL"
-    - echo "$BACKEND_URL"
+    - echo '"TEST_BACKEND_URL"=http://$(pulumi stack output url)/helloworld' >> test.env
+    - echo "$TEST_BACKEND_URL"
     - cd ..
    environment:
-     name: production
+     name: test
+   artifacts:
+    reports:
+      dotenv: test.env
 
 
 test-functional-acceptance-test:
@@ -130,11 +130,13 @@ test-functional-acceptance-test:
   
   script:
     - cd acceptanceTest
-    - echo "$BACKEND_URL"
-    - export BACKEND_URL="$BACKEND_URL"
+    - echo "$TEST_BACKEND_URL"
+    - export BACKEND_URL="$TEST_BACKEND_URL"
     - echo "$BACKEND_URL"
     - gradle cucumber
     - cd ..
+  dependencies:
+    - test
 
 
 
@@ -160,8 +162,7 @@ provide-infrastructure-production:
     - pulumi login
     - pulumi stack select production
     - pulumi up -y
-    - export TEMP_BACKEND_URL=http://$(pulumi stack output url)/helloworld
-    - "BACKEND_URL=$TEMP_BACKEND_URL"
+    - export '"PRODUCTION_BACKEND_URL"=http://$(pulumi stack output url)/helloworld'
     - cd ..
    environment:
     name: production
@@ -173,10 +174,12 @@ production-functional-acceptance-test:
   
   script:
     - cd acceptanceTest
-    - export BACKEND_URL="$BACKEND_URL"
+    - export BACKEND_URL="$PRODUCTION_BACKEND_URL"
+    - echo $BACKEND_URL
     - gradle cucumber
     - cd ..
-
+  dependencies:
+    - production
 
 destroy-infrastructure-production:
    image: pulumi/pulumi-nodejs
