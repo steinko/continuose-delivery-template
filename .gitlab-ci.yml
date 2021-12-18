@@ -115,10 +115,10 @@ provide-infrastructure-test:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - export BACKEND_URL=http://$(pulumi stack output url)/helloworld
+    - "$BACKEND_URL=http://$(pulumi stack output url)/helloworld"
     - cd ..
    environment:
-    name: test
+     name: production
 
 
 test-functional-acceptance-test:
@@ -127,6 +127,7 @@ test-functional-acceptance-test:
   
   script:
     - cd acceptanceTest
+    - export BACKEND_URL="$BACKEND_URL"
     - gradle cucumber
     - cd ..
 
@@ -154,7 +155,7 @@ provide-infrastructure-production:
     - pulumi login
     - pulumi stack select production
     - pulumi up -y
-    - export BACKEND_URL=http://$(pulumi stack output url)/helloworld
+    - "$BACKEND_URL=http://$(pulumi stack output url)/helloworld"
     - cd ..
    environment:
     name: production
@@ -166,6 +167,7 @@ production-functional-acceptance-test:
   
   script:
     - cd acceptanceTest
+    - export BACKEND_URL="$BACKEND_URL"
     - gradle cucumber
     - cd ..
 
