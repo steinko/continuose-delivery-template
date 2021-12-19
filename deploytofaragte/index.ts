@@ -1,7 +1,8 @@
-import {lb} from './fargateService'
+import {backendLb} from './fargateService'
+import {frontendLb} from './fargateService'
 import {service} from './fargateService'
 
 service
-export const url = lb.endpoint.hostname
-
+export const backendUrl = backendLb.endpoint.hostname
+export const frontendUrl = frontendLb.endpoint.hostname
 

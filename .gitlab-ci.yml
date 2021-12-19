@@ -113,21 +113,23 @@ provide-infrastructure-test:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - BACKEND_URL=http://$(pulumi stack output url)/helloworld >> test.env
+    - BACKEND_URL=http://$(pulumi stack output backendUrl)/helloworld >> test.env
+    - '{ "FRONTEND_URL":"http://$(pulumi stack output frontendUrl)" } >> frontend/cypress.env.json'
     - cd ..
    environment:
      name: test
    artifacts:
      paths:
      - test.env
+     - frontend/cypress.env.json
 
 
-test-functional-acceptance-test:
+test-functional-backend-acceptance-test:
   image: gradle
   stage: test-acceptance-test
   
   script:
-    - cd acceptanceTest
+    - cd backendAcceptanceTest
     - export << test.env
     - echo $BACKEND_URL
     - gradle cucumber
@@ -135,6 +137,17 @@ test-functional-acceptance-test:
   dependencies:
     - provide-infrastructure-test
 
+test-functional-acceptance-test:
+  image: node:latest
+  stage: test-acceptance-test
+  script:
+    - cd acceptanceTest
+    - npm ci
+    - npm run start:ci &
+    - npm run cypress-run --spec **/*.feat
+    - cd ..
+  dependencies:
+    - provide-infrastructure-test
 
 
 destroy-test-infrastructure:
