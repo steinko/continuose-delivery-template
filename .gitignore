@@ -1,7 +1,7 @@
 appEngine/node_modules
 appEngine/package-lock.json
-acceptanceTest/coverage
-acceptanceTest/node_modules
+acceptanceTest/coverage/
+acceptanceTest/node_modules/
 backendacceptanceTest/app/build
 frontend/node_moduls
 frontend/package-lock.json
