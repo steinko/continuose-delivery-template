@@ -114,7 +114,7 @@ provide-infrastructure-test:
     - pulumi stack select dev
     - pulumi up -y
     - BACKEND_URL=http://$(pulumi stack output backendUrl)/helloworld >> test.env
-    - "{ 'FRONTEND_URL:http://$(pulumi stack output frontendUrl)' } >> cypress.env.json"
+    - "{ 'FRONTEND_URL:http://`$(pulumi stack output frontendUrl)`' } >> cypress.env.json"
     - mv cypress.env.json ../frontend
     - cd ..
    environment:
