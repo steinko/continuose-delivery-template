@@ -114,8 +114,11 @@ provide-infrastructure-test:
     - pulumi stack select dev
     - pulumi up -y
     - BACKEND_URL=http://$(pulumi stack output backendUrl)/helloworld >> test.env
-    - "FRONTEND_URL:http://$(pulumi stack output frontendUrl)"
-    -  echo cypress.env.json
+    - FRONTEND_URL=http://$(pulumi stack output frontendUrl)
+    - cat ../acceptanceTest/cypress.env.json | \
+    - jq --arg FRONTEND_URL "$FRONTEND_URL" \
+    - '.FRONTEND_URL = $FRONTEND_URL > new.json'
+    - cp new.json ../acceptanceTest/cypress.env.json
     - cd ..
    environment:
      name: test
