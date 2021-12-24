@@ -146,7 +146,8 @@ test-functional-acceptance-test:
   stage: test-acceptance-test
   script:
     - cd acceptanceTest
-    - npm i
+    - npm ci
+    - npm run start:ci &
     - npm run cypress-run
     - cd ..
   dependencies:
