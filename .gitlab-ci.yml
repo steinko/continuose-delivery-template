@@ -150,7 +150,7 @@ test-functional-acceptance-test:
       - docker:dind
   script:
     - cd acceptanceTest
-    - docker run  -v $PWD:/e2e -w /e2e cypress/included:9.2.0
+    - docker run -d -v $PWD:/e2e -w /e2e cypress/included:9.2.0
     - cd ..
   dependencies:
     - provide-infrastructure-test
