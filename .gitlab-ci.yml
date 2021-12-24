@@ -118,6 +118,7 @@ provide-infrastructure-test:
     - apt update && apt install -y curl jq python3 python3-pip
     - cat cypress.env.json | jq --arg FRONTEND_URL "$FRONTEND_URL" '.FRONTEND_URL = $FRONTEND_URL' > new.json
     - cat new.json
+    - rm ../acceptanceTest/cypress.env.json
     - cp new.json ../acceptanceTest/cypress.env.json
     - cat ../acceptanceTest/cypress.env.json
     - cd ..
@@ -126,6 +127,7 @@ provide-infrastructure-test:
    artifacts:
      paths:
      - test.env
+     - ../acceptanceTest/cypress.env.json
 
 
 test-functional-backend-acceptance-test:
