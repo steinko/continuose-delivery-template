@@ -178,22 +178,39 @@ provide-infrastructure-production:
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
-    - BACKEND_URL=http://$(pulumi stack output url)/helloworld >> production.env
+    - BACKEND_URL=http://$(pulumi stack output backendUrl)/helloworld >> test.env
+    - FRONTEND_URL=http://$(pulumi stack output frontendUrl)
+    - apt update && apt install -y curl jq python3 python3-pip
+    - cat cypress.env.json | jq --arg FRONTEND_URL "$FRONTEND_URL" '.FRONTEND_URL = $FRONTEND_URL' > new.json
+    - cat new.json
+    - rm ../acceptanceTest/cypress.env.json
+    - cp new.json ../acceptanceTest/cypress.env.json
+    - cat ../acceptanceTest/cypress.env.json
     - cd ..
    environment:
     name: production
    artifacts:
      paths:
-       - production.env
+       - test.env
 
+production--functional-acceptance-test:
+  stage: production-acceptance-test
+  image: docker:dind
+  services:
+      - docker:dind
+  script:
+    - cd acceptanceTest
+    - docker run -d -v $PWD:/e2e -w /e2e cypress/included:9.2.0
+    - cd ..
+  dependencies:
+    - provide-infrastructure-production
 
-
-production-functional-acceptance-test:
+production-backend-functional-acceptance-test:
   image: gradle
   stage: production-acceptance-test 
   script:
     - cd acceptanceTest
-    - export << production.env
+    - export << test.env
     - echo $BACKEND_URL
     - gradle cucumber
     - cd ..
