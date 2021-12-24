@@ -126,7 +126,6 @@ provide-infrastructure-test:
    artifacts:
      paths:
      - test.env
-     - frontend/cypress.env.json
 
 
 test-functional-backend-acceptance-test:
@@ -147,9 +146,8 @@ test-functional-acceptance-test:
   stage: test-acceptance-test
   script:
     - cd acceptanceTest
-    - npm ci
-    - npm run start:ci &
-    - npm run cypress-run --spec **/*.feat
+    - npm i
+    - npm run cypress-run
     - cd ..
   dependencies:
     - provide-infrastructure-test
