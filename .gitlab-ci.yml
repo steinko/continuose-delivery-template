@@ -126,8 +126,8 @@ provide-infrastructure-test:
      name: test
    artifacts:
      paths:
-     - test.env
-     - ../acceptanceTest/cypress.env.json
+     - ./deploytofaragte/test.env
+     - ./acceptanceTest/cypress.env.json
 
 
 test-functional-backend-acceptance-test:
