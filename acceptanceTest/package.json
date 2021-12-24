@@ -1,7 +1,8 @@
 {
   "scripts": {
     "cypress-open": "cypress open",
-    "cypress-run": "cypress run"
+    "cypress-run": "cypress run",
+    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}"
   },
   "dependencies": {
     "cosmiconfig": "^7.0.1",
