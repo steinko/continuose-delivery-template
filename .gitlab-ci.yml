@@ -105,6 +105,8 @@ build-frontend-image:
 
 provide-infrastructure-test:
    image: pulumi/pulumi-nodejs
+   services: 
+     - docker pull stedolan/jq
    stage: test-infrastructure-provision
    script:
     - cd deploytofaragte
