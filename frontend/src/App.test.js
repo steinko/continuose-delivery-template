@@ -1,9 +1,8 @@
-//import { render, screen } from '@testing-library/react';
-//import App from './App';
-//import React  from 'react';
+import App from './App' 
+import {render} from '@testing-library/react'
+import React from 'react'
 
-test('renders learn react link', () => {
- // render(<App />);
- // const linkElement = screen.getByText(/save to reload/i);
- // expect(linkElement).toBeInTheDocument();
-});
+it('should display hello world', async () => {
+     let {getByLabelText} =  render(<App/>)
+    expect(await getByLabelText('Message:').value).toBe('Hello World')
+  })
