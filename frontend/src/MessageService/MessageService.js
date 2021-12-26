@@ -1,6 +1,13 @@
-export default class MessageService {
 
-	 static async getMessage(){ 
-	   return fetch("http://localhost:8080/helloworld")
+
+export class MessageService {
+
+    async getMessage() { 
+        return fetch(this.getBackendUrl())
 	}
+	
+	getBackendUrl() { 
+        return process.env.BACKEND_URL // eslint-disable-line
+	}
+	
 }

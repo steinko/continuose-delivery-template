@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import {MessageService} from './MessageService/MessageService'
 
 class App extends Component {
   constructor(props){
@@ -10,8 +11,9 @@ class App extends Component {
   }
 	
   getMessage() {
+	const messageService = new MessageService() 
 	this.setStat({
-		message: "Hello World"
+		message: messageService.getMessage()
 	})
   }
 
