@@ -53,6 +53,7 @@ frontend-integration-test:
   before_script:
     - cd frontend
   script:
+    - export  REACT_APP_BACKEND_URL=localhost:8080
     - npm install
     - npm run test -- --coverage --watchAll=false
     - cd ..
