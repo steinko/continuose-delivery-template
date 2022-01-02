@@ -7,7 +7,7 @@ export class MessageService {
 	}
 	
 	getBackendUrl() { 
-        return process.env.BACKEND_URL // eslint-disable-line
+        return process.env.REACT_APP_BACKEND_URL // eslint-disable-line
 	}
 	
 }
