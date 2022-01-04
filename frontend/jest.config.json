@@ -9,7 +9,9 @@
   "branches": 0,
   "functions": 0,
   "lines": 0,
-  "statements": 0
+  "statements": 0,
+   "automock": false,
+  "resetMocks": false
   }
  },
  "moduleDirectories": ["node_modules", "src"]
