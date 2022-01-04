@@ -53,7 +53,7 @@ frontend-integration-test:
   before_script:
     - cd frontend
   script:
-    - export  REACT_APP_BACKEND_URL=localhost:8080
+    - export  REACT_APP_BACKEND_URL=http://localhost:80
     - npm install
     - npm run test -- --coverage --watchAll=false
     - cd ..
@@ -172,6 +172,8 @@ destroy-test-infrastructure:
 provide-infrastructure-production:
    image: pulumi/pulumi-nodejs
    stage: production-infrastructure-provision
+   only:
+    - merge_requests
    script:
     - cd deploytofaragte
     - npm install
@@ -196,9 +198,11 @@ provide-infrastructure-production:
 
 production--functional-acceptance-test:
   stage: production-acceptance-test
+  only:
+    - merge_requests
   image: docker:dind
   services:
-      - docker:dind
+    - docker:dind
   script:
     - cd acceptanceTest
     - docker run -d -v $PWD:/e2e -w /e2e cypress/included:9.2.0
@@ -208,7 +212,9 @@ production--functional-acceptance-test:
 
 production-backend-functional-acceptance-test:
   image: gradle
-  stage: production-acceptance-test 
+  stage: production-acceptance-test
+  only:
+    - merge_requests 
   script:
     - cd acceptanceTest
     - export << test.env
@@ -221,6 +227,8 @@ production-backend-functional-acceptance-test:
 destroy-infrastructure-production:
    image: pulumi/pulumi-nodejs
    stage: production-infrastructure-destruction
+   only:
+    - merge_requests
    script:
     - cd deploytofaragte
     - npm install

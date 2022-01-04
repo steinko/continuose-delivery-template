@@ -15,8 +15,8 @@ describe('Test Message Service', () => {
    })
 
   it("should return hello world", async () => {
-	   fetch.mockResponse("Hello World")
-       	const messageService = new MessageService()
+        fetch.mockResponse("Hello World")
+        const messageService = new MessageService()
         const message = await messageService.getMessage()
         expect(message).toBe("Hello World")
   })

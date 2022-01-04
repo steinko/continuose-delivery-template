@@ -3,6 +3,6 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom'
-require('jest-fetch-mock').enableMocks()
+require('jest-fetch-mock').enableMocks() // eslint-disable-line
 // changes default behavior of fetchMock to use the real 'fetch' implementation and not mock responses
-fetchMock.dontMock()
+fetchMock.dontMock() // eslint-disable-line
