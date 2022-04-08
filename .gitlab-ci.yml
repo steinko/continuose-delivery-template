@@ -75,7 +75,7 @@ frontend-lint:
     - cd ..
 
 frontend-acceptance-test:
-   stage: frontend-acceptance-test
+   stage: acceptance-test
    image: node
    script:
      - cd frontend
