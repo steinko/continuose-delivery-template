@@ -54,7 +54,7 @@ frontend-integration-test:
     - cd frontend
   script:
     - export  REACT_APP_BACKEND_URL=http://localhost:80
-    - export  REACT_APP_USE_MSW_MOCK_API='yes'
+    - export  REACT_APP_USE_MSW=true
     - npm install
     - npm run test -- --watchAll=false
     - cd ..
@@ -81,6 +81,7 @@ frontend-acceptance-test:
      - cd frontend
      - npm install
      - export  REACT_APP_BACKEND_URL=http://localhost:5000
+     - export  REACT_APP_USE_MSW='yes'
      - npm run start:msw
      - cd ..
      - cd acceptanceTest
