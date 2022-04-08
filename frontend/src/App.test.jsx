@@ -8,7 +8,7 @@ import { setupServer } from 'msw/node'
 
 it('should display hello world',  async () => {
 	
-	 const url = process.env.REACT_APP_BACKEND_URL  +"/helloworld"  // eslint-disable-line
+	 const url = process.env.REACT_APP_BACKEND_URL + "/helloworld"  // eslint-disable-line
      console.log(url)
 
 	 const server = setupServer(

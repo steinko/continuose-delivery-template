@@ -56,7 +56,7 @@ frontend-integration-test:
     - export  REACT_APP_BACKEND_URL=http://localhost:80
     - export  REACT_APP_USE_MSW=true
     - npm install
-    - npm run test -- --watchAll=false
+    - npm test -- --watchAll=false
     - cd ..
   artifacts:
     reports:
