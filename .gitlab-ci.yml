@@ -53,7 +53,7 @@ frontend-integration-test:
   before_script:
     - cd frontend
   script:
-    - export  REACT_APP_BACKEND_URL=http://localhost:80
+    - export  REACT_APP_BACKEND_URL=http://localhost:8000
     - export  REACT_APP_USE_MSW=true
     - npm install
     - npm test -- --watchAll=false
