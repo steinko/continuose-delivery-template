@@ -54,9 +54,15 @@ frontend-integration-test:
     - cd frontend
   script:
     - export  REACT_APP_BACKEND_URL=http://localhost:80
+    - export  REACT_APP_USE_MSW_MOCK_API='yes'
     - npm install
-    - npm run test -- --coverage --watchAll=false
+    - npm run test -- --watchAll=false
     - cd ..
+  artifacts:
+    reports:
+      junit: junit.xml
+      cobertura: coverage/cobertura-coverage.xml
+
 
 frontend-lint:
   stage: continuose-intgeration
@@ -67,6 +73,20 @@ frontend-lint:
     - npm install
     - npm run lint
     - cd ..
+
+frontend-acceptance-test:
+   stage: frontend-acceptance-test
+   image: node
+   script:
+     - cd frontend
+     - npm install
+     - export  REACT_APP_BACKEND_URL=http://localhost:5000
+     - npm run start:msw
+     - cd ..
+     - cd acceptanceTest
+     - npm i
+     - docker run -it -v $PWD:/e2e -w /e2e --entrypoint=cypress -e cypress_frontened_url=http://localhost:3000  cypress/included:9.1.1
+
 
 backend-assemble-artefact:
   stage: continuose-intgeration

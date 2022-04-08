@@ -6,6 +6,8 @@ backendacceptanceTest/app/build
 frontend/node_moduls
 frontend/package-lock.json
 frontend/build
+frontend/junit.xml
+frontend/coverage
 backend/bin
 backend/build
 deploytofargate/node_modules

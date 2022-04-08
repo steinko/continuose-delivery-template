@@ -1,11 +1,13 @@
 {
     "name": "deploytofargate",
     "devDependencies": {
-        "@types/node": "^14"
+        "@testing-library/cypress": "^8.0.2",
+        "@types/node": "^14",
+        "cypress": "^9.5.1"
     },
     "dependencies": {
-        "@pulumi/pulumi": "^3.0.0",
         "@pulumi/aws": "^4.0.0",
-        "@pulumi/awsx": "^0.30.0"
+        "@pulumi/awsx": "^0.30.0",
+        "@pulumi/pulumi": "^3.0.0"
     }
 }

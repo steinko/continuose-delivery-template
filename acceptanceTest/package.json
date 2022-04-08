@@ -1,7 +1,7 @@
 {
   "scripts": {
     "cypress-open": "cypress open",
-    "cypress-run": "cypress run",
+    "cypress-run": "cypress run --spec **/*.feature",
     "start:ci": "serve --no-clipboard --listen ${PORT:-8080}"
   },
   "dependencies": {

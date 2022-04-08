@@ -2,11 +2,27 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+            "testRegex": "/*.test.js$",
+            "collectCoverageFrom": ["src/components/**/*.js"],
+            "collectCoverage": true,
+            "coverageReporters": ["cobertura", "text"],
+            "coverageDirectory": "test-coverage",
+            "coverageThreshold": {
+            "global": {
+                         "branches": 0,
+                         "functions": 0,
+                         "lines": 0,
+                         "statements": 0
+                       }
+             }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "dotenv": "^10.0.0",
     "eslint-plugin-jest": "^24.3.6",
+    "jest-junit": "^13.1.0",
     "npm": "^7.24.2",
     "react": "^17.0.0",
     "react-async": "^10.0.1",
@@ -17,8 +33,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:msw": "REACT_APP_USE_MSW_MOCK_API=yes react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --reporters=default --reporters=jest-junit",
     "eject": "react-scripts eject",
     "docgen": "react-docgen src -e [src/*.test.js,src/setupTests.js,src/reportWebVitals.js,src/index.js ]",
     "lint": "eslint src",
@@ -53,7 +70,11 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-testing-library": "^4.6.0",
     "jest-fetch-mock": "^3.0.3",
+    "msw": "^0.36.4",
     "react-docgen": "^5.4.0",
     "sonarqube-scanner": "^2.8.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

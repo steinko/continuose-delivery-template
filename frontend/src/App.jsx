@@ -1,17 +1,29 @@
-import { useFetch } from "react-async"
 import React from 'react'
-
-const Message = () => { 
-                const url = process.env.REACT_APP_BACKEND_URL  +"/helloworld" 
-                console.log(url)
-                const { data, error } = useFetch(url)
-                if (error) return error.message
-                if (data) return data.text
-                return null          
-     }
+import { useState, useEffect } from "react";
 
 function App () {
-    return <Message />
+	
+	const [message, setMessage] = useState('')
+	
+	useEffect(() => {
+            const   getMessage = async () => {
+                const url = process.env.REACT_APP_BACKEND_URL  +"/helloworld" 
+                console.log(url)
+               
+                      const response = await fetch(url)
+                      console.log(response.status)
+                      const text = await response.json()
+                      console.log(text.message)
+                      
+                      setMessage(text.message)
+
+                    
+            }
+            getMessage()
+            .catch(console.error)
+     }, [])
+
+    return ( <div>{message}</div>)
  }
 
 export default  App ;
