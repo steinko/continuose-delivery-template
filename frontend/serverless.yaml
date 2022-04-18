@@ -1,0 +1,14 @@
+org: steinko
+
+app: continuose-delivery-template
+service: webservice
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+plugins:
+  - serverless-finch
+custom:
+  client:
+    bucketName: frontend-template
+    distributionFolder: build

@@ -4,16 +4,8 @@ default:
  
 stages:
   - continuose-intgeration
-  - build-image
-  - test-infrastructure-provision
-  - test-deployment-test
-  - test-acceptance-test
-  - test-infrastructure-destruction
-  - production-infrastructure-provision
-  - production-deployment-test
-  - production-acceptance-test
-  - production-infrastructure-destruction
-
+  - deploy-frontened
+  
  
 backend-integration-test:
   stage: continuose-intgeration
@@ -76,171 +68,16 @@ frontend-lint:
 
 
 
-
-backend-assemble-artefact:
-  stage: continuose-intgeration
-  image: gradle:alpine
+deploy-frontend:
+  image: node
+  stage: deploy-frontend
   script:
-    - cd backend
-    - gradle assemble
-    - cd ..
-  artifacts:
-    paths:
-      - backend/build/libs/backend.jar 
-
-build-backend-image:
-    stage: build-image
-    image: docker:dind
-    services:
-      - docker:dind
-    script:
-     - cd backend
-     - docker login -u steinko --password "$DOCKER_PASSWORD"  
-     - docker build  -t steinko/helloworld-backend .
-     - docker push steinko/helloworld-backend
-     - cd ..
-
-build-frontend-image:
-    stage: build-image
-    image: docker:dind
-    services:
-      - docker:dind
-    script:
-     - cd frontend
-     - docker login -u steinko --password "$DOCKER_PASSWORD"  
-     - docker build  -t steinko/helloworld-frontend .
-     - docker push steinko/helloworld-frontend
-     - cd ..
-
-
-provide-infrastructure-test:
-   image: pulumi/pulumi-nodejs
-   stage: test-infrastructure-provision
-   script:
-    - cd deploytofaragte
-    - npm install
-    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
-    - pulumi login
-    - pulumi stack select dev
-    - pulumi up -y
-    - BACKEND_URL=http://$(pulumi stack output backendUrl)/helloworld >> test.env
-    - FRONTEND_URL=http://$(pulumi stack output frontendUrl)
-    - apt update && apt install -y curl jq python3 python3-pip
-    - cat cypress.env.json | jq --arg FRONTEND_URL "$FRONTEND_URL" '.FRONTEND_URL = $FRONTEND_URL' > new.json
-    - cat new.json
-    - cp new.json ../acceptanceTest/cypress.env.json
-    - cat ../acceptanceTest/cypress.env.json
-    - cd ..
-   environment:
-     name: test
-   artifacts:
-     paths:
-     - ./deploytofaragte/test.env
-     - ./acceptanceTest/cypress.env.json
-
-
-test-functional-backend-acceptance-test:
-  image: gradle
-  stage: test-acceptance-test
-  
-  script:
-    - cd backendAcceptanceTest
-    - export << test.env
-    - echo $BACKEND_URL
-    - gradle cucumber
-    - cd ..
-  dependencies:
-    - provide-infrastructure-test
-
-test-functional-acceptance-test:
-  stage: test-acceptance-test
-  image: docker:dind
-  services:
-      - docker:dind
-  script:
-    - cd acceptanceTest
-    - docker run -d -v $PWD:/e2e -w /e2e cypress/included:9.2.0
-    - cd ..
-  dependencies:
-    - provide-infrastructure-test
-
-
-destroy-test-infrastructure:
-   image: pulumi/pulumi-nodejs
-   stage: test-infrastructure-destruction
-   script:
-    - cd deploytofaragte
-    - npm install
-    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
-    - pulumi login
-    - pulumi stack select dev
-    - pulumi destroy -y
-    - cd ..
-
-provide-infrastructure-production:
-   image: pulumi/pulumi-nodejs
-   stage: production-infrastructure-provision
-   only:
-    - merge_requests
-   script:
-    - cd deploytofaragte
-    - npm install
-    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
-    - pulumi login
-    - pulumi stack select dev
-    - pulumi up -y
-    - BACKEND_URL=http://$(pulumi stack output backendUrl)/helloworld >> test.env
-    - FRONTEND_URL=http://$(pulumi stack output frontendUrl)
-    - apt update && apt install -y curl jq python3 python3-pip
-    - cat cypress.env.json | jq --arg FRONTEND_URL "$FRONTEND_URL" '.FRONTEND_URL = $FRONTEND_URL' > new.json
-    - cat new.json
-    - cp new.json ../acceptanceTest/cypress.env.json
-    - cat ../acceptanceTest/cypress.env.json
-    - cd ..
-   environment:
-    name: production
-   artifacts:
-     paths:
-       - test.env
-
-production--functional-acceptance-test:
-  stage: production-acceptance-test
-  only:
-    - merge_requests
-  image: docker:dind
-  services:
-    - docker:dind
-  script:
-    - cd acceptanceTest
-    - docker run -d -v $PWD:/e2e -w /e2e cypress/included:9.2.0
-    - cd ..
-  dependencies:
-    - provide-infrastructure-production
-
-production-backend-functional-acceptance-test:
-  image: gradle
-  stage: production-acceptance-test
-  only:
-    - merge_requests 
-  script:
-    - cd acceptanceTest
-    - export << test.env
-    - echo $BACKEND_URL
-    - gradle cucumber
-    - cd ..
-  dependencies:
-    - provide-infrastructure-production
-
-destroy-infrastructure-production:
-   image: pulumi/pulumi-nodejs
-   stage: production-infrastructure-destruction
-   only:
-    - merge_requests
-   script:
-    - cd deploytofaragte
-    - npm install
-    - export PULUMI_ACCESS_TOKEN="$PULUMI_ACCESS_TOKEN"
-    - pulumi login
-    - pulumi stack select dev
-    - pulumi destroy -y
-    - cd ..
+    - cd frontend
+    - npm i
+    - npm run build
+    - npm install -g serverless
+    - 'serverless config credentials --provider "aws" --key "$AWS_ACCESS_KEY_ID" --secret "$AWS_SECRET_ACCESS_KEY"'
+    - serverless client deploy --no-confirm --use-local-credentials
+    - export CYPRESS_HOST=http://frontend-template.s3-website-us-east-1.amazonaws.com
+    - export REACT_APP_BACKEND_URL=http://backend-template.s3-website-us-east-1.amazonaws.com
+    - npm run cypress:run
