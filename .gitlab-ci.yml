@@ -74,19 +74,7 @@ frontend-lint:
     - npm run lint
     - cd ..
 
-frontend-acceptance-test:
-   stage:  test-acceptance-test
-   image: node
-   script:
-     - cd frontend
-     - npm install
-     - export  REACT_APP_BACKEND_URL=http://localhost:5000
-     - export  REACT_APP_USE_MSW='yes'
-     - npm run start:msw
-     - cd ..
-     - cd acceptanceTest
-     - npm i
-     - docker run -it -v $PWD:/e2e -w /e2e --entrypoint=cypress -e cypress_frontened_url=http://localhost:3000  cypress/included:9.1.1
+
 
 
 backend-assemble-artefact:
