@@ -1,0 +1,12 @@
+service: service
+provider: aws
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: my-website-bucket
+    distributionFolder: website
+    indexDocument: home.html
+    errorDocument: 404.html
