@@ -4,7 +4,7 @@ default:
  
 stages:
   - continuose-intgeration
-  - deploy-frontened
+  - deploy-frontend
   
  
 backend-integration-test:
