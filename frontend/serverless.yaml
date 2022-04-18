@@ -10,5 +10,5 @@ plugins:
   - serverless-finch
 custom:
   client:
-    bucketName: frontend-template
+    bucketName: frontend
     distributionFolder: build
